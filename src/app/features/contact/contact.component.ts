@@ -1,40 +1,32 @@
 import { Component, inject } from '@angular/core';
-import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { SiteContentService } from '../../core/services/site-content.service';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [ReactiveFormsModule],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss',
 })
 export class ContactComponent {
-  private readonly fb = inject(FormBuilder);
   private readonly content = inject(SiteContentService);
 
   readonly company = this.content.company;
-  submitted = false;
 
-  readonly form = this.fb.nonNullable.group({
-    name: ['', [Validators.required, Validators.minLength(2)]],
-    email: ['', [Validators.required, Validators.email]],
-    organization: [''],
-    message: ['', [Validators.required, Validators.minLength(10)]],
-  });
+  readonly mailToHref = this.buildMailToHref();
 
-  submit(): void {
-    if (this.form.invalid) {
-      this.form.markAllAsTouched();
-      return;
-    }
-
-    const { name, email, organization, message } = this.form.getRawValue();
-    const subject = encodeURIComponent(`Website inquiry from ${name}`);
+  private buildMailToHref(): string {
+    const subject = encodeURIComponent('Website inquiry');
     const body = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\nOrganization: ${organization || 'N/A'}\n\n${message}`
+      [
+        'Name: ',
+        'Email: ',
+        'Organization: ',
+        '',
+        'Message:',
+        '',
+      ].join('\n')
     );
-    window.location.href = `mailto:${this.company.email}?subject=${subject}&body=${body}`;
-    this.submitted = true;
+
+    return `mailto:${this.company.email}?subject=${subject}&body=${body}`;
   }
 }

@@ -51,7 +51,6 @@ export const NAV_LINKS: NavLink[] = [
   },
   { label: 'Contract Vehicles', path: '/contract-vehicles' },
   { label: 'Careers', path: '/careers' },
-  { label: 'Contact', path: '/contact' },
 ];
 
 export const SERVICES: ServiceItem[] = [
