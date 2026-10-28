@@ -1,5 +1,5 @@
 <section class="page-hero">
-  <div class="container">
+  <div class="container-site relative z-[1]">
     <h1>Careers</h1>
     <p>
       Grow your career with talented professionals on challenging federal assignments — in a culture
@@ -8,68 +8,68 @@
   </div>
 </section>
 
-<section class="section">
-  <div class="container alert-card">
-    <h2>Important: Recruitment scam alert</h2>
-    <p>
+<section class="section-y">
+  <div class="container-site rounded-[20px] border border-[#f0d7b8] bg-[#fff8f0] p-[clamp(1.5rem,4vw,2.25rem)]">
+    <h2 class="mb-3.5 text-[clamp(1.4rem,2.5vw,1.85rem)]">Important: Recruitment scam alert</h2>
+    <p class="mb-6 max-w-4xl text-ink-muted">
       Unauthorized parties may impersonate i360 recruiters or hiring managers. Fraudulent activity
       can include fake job postings, interviews, emails, requests for personal information, and
       links to external portals.
     </p>
-    <div class="alert-points">
+    <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
       <div>
-        <h3>How to verify a real opportunity</h3>
-        <ul>
-          <li>Official email from an &#64;i360technologies.com address</li>
-          <li>Role referenced on our official careers or LinkedIn presence</li>
-          <li>Live interview with an identifiable i360 employee</li>
-          <li>Never payment requests, gift cards, crypto, or fund transfers</li>
-          <li>Sensitive identity/banking details only via secured HR systems after a written offer</li>
+        <h3 class="mb-3 text-[1.05rem]">How to verify a real opportunity</h3>
+        <ul class="grid gap-2.5">
+          <li class="relative pl-4 text-ink-soft before:absolute before:left-0 before:top-[0.55rem] before:h-1.5 before:w-1.5 before:rounded-full before:bg-brand-500 before:content-['']">Official email from an &#64;i360technologies.com address</li>
+          <li class="relative pl-4 text-ink-soft before:absolute before:left-0 before:top-[0.55rem] before:h-1.5 before:w-1.5 before:rounded-full before:bg-brand-500 before:content-['']">Role referenced on our official careers or LinkedIn presence</li>
+          <li class="relative pl-4 text-ink-soft before:absolute before:left-0 before:top-[0.55rem] before:h-1.5 before:w-1.5 before:rounded-full before:bg-brand-500 before:content-['']">Live interview with an identifiable i360 employee</li>
+          <li class="relative pl-4 text-ink-soft before:absolute before:left-0 before:top-[0.55rem] before:h-1.5 before:w-1.5 before:rounded-full before:bg-brand-500 before:content-['']">Never payment requests, gift cards, crypto, or fund transfers</li>
+          <li class="relative pl-4 text-ink-soft before:absolute before:left-0 before:top-[0.55rem] before:h-1.5 before:w-1.5 before:rounded-full before:bg-brand-500 before:content-['']">Sensitive identity/banking details only via secured HR systems after a written offer</li>
         </ul>
       </div>
       <div>
-        <h3>If you were contacted suspiciously</h3>
-        <ul>
-          <li>Do not reply, click links, or open attachments</li>
-          <li>Do not send money or identity documents</li>
-          <li>
+        <h3 class="mb-3 text-[1.05rem]">If you were contacted suspiciously</h3>
+        <ul class="grid gap-2.5">
+          <li class="relative pl-4 text-ink-soft before:absolute before:left-0 before:top-[0.55rem] before:h-1.5 before:w-1.5 before:rounded-full before:bg-brand-500 before:content-['']">Do not reply, click links, or open attachments</li>
+          <li class="relative pl-4 text-ink-soft before:absolute before:left-0 before:top-[0.55rem] before:h-1.5 before:w-1.5 before:rounded-full before:bg-brand-500 before:content-['']">Do not send money or identity documents</li>
+          <li class="relative pl-4 text-ink-soft before:absolute before:left-0 before:top-[0.55rem] before:h-1.5 before:w-1.5 before:rounded-full before:bg-brand-500 before:content-['']">
             Forward details to
             <a [href]="'mailto:' + company.securityEmail">{{ company.securityEmail }}</a>
           </li>
-          <li>Report via IC3 and the FTC when appropriate</li>
+          <li class="relative pl-4 text-ink-soft before:absolute before:left-0 before:top-[0.55rem] before:h-1.5 before:w-1.5 before:rounded-full before:bg-brand-500 before:content-['']">Report via IC3 and the FTC when appropriate</li>
         </ul>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section careers-band">
-  <div class="container careers-grid">
+<section class="section-y bg-surface">
+  <div class="container-site grid grid-cols-1 gap-8 md:grid-cols-2">
     <article>
       <span class="section-label">Our people</span>
-      <h2>Challenging work with room to grow</h2>
-      <p>
+      <h2 class="mb-3.5 text-[clamp(1.45rem,2.5vw,1.9rem)]">Challenging work with room to grow</h2>
+      <p class="mb-3.5 text-ink-muted">
         You’ll work alongside experienced professionals in a team environment, advancing your career
         across consulting, project management, and functional or technical paths.
       </p>
-      <p>
+      <p class="text-ink-muted">
         We hire people who share our values — and we evaluate values alongside technical performance.
       </p>
     </article>
     <article>
       <span class="section-label">Benefits</span>
-      <h2>Support that matches the mission</h2>
-      <ul class="benefit-list">
+      <h2 class="mb-3.5 text-[clamp(1.45rem,2.5vw,1.9rem)]">Support that matches the mission</h2>
+      <ul class="grid gap-2.5">
         @for (benefit of benefits; track benefit) {
-          <li>{{ benefit }}</li>
+          <li class="rounded-md border border-line bg-white px-3.5 py-3">{{ benefit }}</li>
         }
       </ul>
     </article>
   </div>
 </section>
 
-<section class="section">
-  <div class="container eeo">
+<section class="section-y">
+  <div class="container-site max-w-3xl text-[0.98rem] text-ink-muted">
     <p>
       i360technologies is an Equal Opportunity Employer — Minority/Female/Veteran/Disability. All
       qualified applicants will receive consideration for employment without regard to race, color,

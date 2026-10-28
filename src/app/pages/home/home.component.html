@@ -1,119 +1,127 @@
-<section class="hero">
-  <div class="hero-media" aria-hidden="true"></div>
-  <div class="hero-overlay" aria-hidden="true"></div>
-  <div class="container hero-content">
-    <p class="hero-brand">i360technologies</p>
-    <h1>Enterprise solutions built for federal mission outcomes.</h1>
-    <p class="hero-lead">
+<section class="relative grid min-h-[min(92vh,52rem)] items-end overflow-hidden text-white">
+  <div class="absolute inset-0 scale-105 animate-hero-zoom bg-[url('/images/hero-bg.jpg')] bg-cover bg-center" aria-hidden="true"></div>
+  <div
+    class="absolute inset-0 bg-[linear-gradient(120deg,rgb(10_39_68_/_88%)_8%,rgb(20_58_23_/_62%)_58%,rgb(10_39_68_/_55%)_100%)]"
+    aria-hidden="true"
+  ></div>
+  <div class="container-site relative z-[1] animate-rise-in pb-[clamp(3.5rem,8vw,6rem)] pt-[clamp(6rem,14vw,10rem)]">
+    <p class="mb-4 font-display text-[clamp(1.05rem,2.2vw,1.35rem)] font-semibold tracking-wide text-brand-400">
+      i360technologies
+    </p>
+    <h1 class="mb-5 max-w-[14ch] text-[clamp(2.6rem,6.5vw,4.6rem)] text-white">
+      Enterprise solutions built for federal mission outcomes.
+    </h1>
+    <p class="mb-8 max-w-xl text-[clamp(1.1rem,2vw,1.3rem)] text-white/85">
       Providing agile and innovative enterprise solutions in a timely and fiscally responsible manner.
     </p>
-    <div class="hero-actions">
+    <div class="flex flex-wrap gap-3.5">
       <a routerLink="/services" class="btn btn-primary">Explore services</a>
       <a routerLink="/contact" class="btn btn-secondary">Contact us</a>
     </div>
   </div>
 </section>
 
-<section class="alert-strip">
-  <div class="container alert-inner">
+<section class="border-b border-line bg-surface-cream">
+  <div class="container-site flex flex-col items-start justify-between gap-6 py-5 sm:flex-row sm:items-center">
     <div>
-      <strong>Recruitment scam alert</strong>
-      <p>
+      <strong class="mb-1 block font-display text-ink">Recruitment scam alert</strong>
+      <p class="text-[0.98rem] text-ink-muted">
         Unauthorized parties may impersonate i360 recruiters. Verify all outreach before sharing information.
       </p>
     </div>
-    <a routerLink="/careers" class="btn btn-outline">Read guidance</a>
+    <a routerLink="/careers" class="btn btn-outline shrink-0">Read guidance</a>
   </div>
 </section>
 
-<section class="section services-section">
-  <div class="container">
-    <div class="section-intro">
+<section class="section-y">
+  <div class="container-site">
+    <div class="mb-11 max-w-2xl">
       <span class="section-label">What we deliver</span>
-      <h2 class="section-title">A full suite of enterprise capabilities</h2>
-      <p class="section-lead">
+      <h2 class="mb-4 max-w-[18ch] text-[clamp(1.85rem,3.5vw,2.75rem)]">A full suite of enterprise capabilities</h2>
+      <p class="max-w-2xl text-lg text-ink-muted">
         From Oracle Federal Financials to RPA, analytics, and custom applications — we bring the
         people, process, and technology federal agencies need.
       </p>
     </div>
 
-    <div class="service-grid">
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
       @for (service of services; track service.slug; let i = $index) {
         <a
-          class="service-card"
+          class="flex min-h-56 animate-rise-in flex-col gap-3 rounded-[20px] border border-transparent bg-surface p-6 no-underline text-inherit transition hover:-translate-y-1 hover:border-brand-100 hover:bg-white hover:shadow-soft hover:no-underline hover:text-inherit"
           [routerLink]="['/services', service.slug]"
           [style.animation-delay]="i * 60 + 'ms'"
         >
-          <span class="service-index">{{ i + 1 | number: '2.0-0' }}</span>
-          <h3>{{ service.title }}</h3>
-          <p>{{ service.short }}</p>
-          <span class="learn-more">Learn more →</span>
+          <span class="font-display text-sm font-semibold text-brand-600">{{ i + 1 | number: '2.0-0' }}</span>
+          <h3 class="text-xl">{{ service.title }}</h3>
+          <p class="flex-1 text-ink-muted">{{ service.short }}</p>
+          <span class="font-display text-sm font-semibold text-navy-700 group-hover:text-brand-600">Learn more →</span>
         </a>
       }
     </div>
   </div>
 </section>
 
-<section class="section trust-section">
-  <div class="container trust-grid">
+<section class="section-y bg-gradient-to-b from-white to-surface-cream">
+  <div class="container-site grid items-center gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
     <div>
       <span class="section-label">Why agencies choose i360</span>
-      <h2 class="section-title">Trusted advisors since 2001</h2>
-      <p class="section-lead">
+      <h2 class="mb-4 max-w-[18ch] text-[clamp(1.85rem,3.5vw,2.75rem)]">Trusted advisors since 2001</h2>
+      <p class="max-w-2xl text-lg text-ink-muted">
         We specialize in modernizing federal financial systems and enabling operational improvement
         with the right mix of people, processes, and technology.
       </p>
-      <div class="stat-row">
+      <div class="my-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
         <div>
-          <strong>2001</strong>
-          <span>Founded</span>
+          <strong class="mb-1 block font-display text-3xl leading-none text-ink">2001</strong>
+          <span class="text-sm text-ink-muted">Founded</span>
         </div>
         <div>
-          <strong>Fed</strong>
-          <span>Focused</span>
+          <strong class="mb-1 block font-display text-3xl leading-none text-ink">Fed</strong>
+          <span class="text-sm text-ink-muted">Focused</span>
         </div>
         <div>
-          <strong>SB</strong>
-          <span>Small business</span>
+          <strong class="mb-1 block font-display text-3xl leading-none text-ink">SB</strong>
+          <span class="text-sm text-ink-muted">Small business</span>
         </div>
       </div>
       <a routerLink="/about" class="btn btn-dark">About i360</a>
     </div>
-    <div class="trust-panel">
-      <blockquote>
+    <div class="relative overflow-hidden rounded-[20px] bg-navy-900 p-[clamp(1.75rem,4vw,2.75rem)] text-white shadow-soft-lg">
+      <div class="pointer-events-none absolute -bottom-[40%] -right-[20%] h-56 w-56 rounded-full bg-brand-400/20"></div>
+      <blockquote class="relative mb-5 text-[clamp(1.15rem,2vw,1.35rem)] leading-snug text-white/90">
         “{{ testimonials[0].quote }}”
       </blockquote>
-      <cite>— {{ testimonials[0].attribution }}</cite>
+      <cite class="relative font-display font-semibold not-italic text-brand-400">— {{ testimonials[0].attribution }}</cite>
     </div>
   </div>
 </section>
 
-<section class="section partners-section">
-  <div class="container">
-    <div class="section-intro centered">
+<section class="section-y bg-surface">
+  <div class="container-site">
+    <div class="mx-auto mb-11 max-w-2xl text-center">
       <span class="section-label">Partners & associations</span>
-      <h2 class="section-title">Strategically aligned for deeper capability</h2>
-      <p class="section-lead">
+      <h2 class="mx-auto mb-4 max-w-[18ch] text-[clamp(1.85rem,3.5vw,2.75rem)]">Strategically aligned for deeper capability</h2>
+      <p class="mx-auto max-w-2xl text-lg text-ink-muted">
         We maintain deep expertise with the products and competencies our clients rely on.
       </p>
     </div>
-    <div class="partner-grid">
+    <div class="grid grid-cols-1 gap-3.5 sm:grid-cols-2 lg:grid-cols-5">
       @for (partner of partners; track partner.name) {
-        <article class="partner-card">
-          <h3>{{ partner.name }}</h3>
-          <p>{{ partner.detail }}</p>
+        <article class="min-h-[9.5rem] rounded-xl border border-line bg-white p-5">
+          <h3 class="mb-2 text-base">{{ partner.name }}</h3>
+          <p class="text-sm text-ink-muted">{{ partner.detail }}</p>
         </article>
       }
     </div>
   </div>
 </section>
 
-<section class="cta-band">
-  <div class="container cta-inner">
+<section class="bg-gradient-to-br from-brand-700 to-navy-900 py-[clamp(2.75rem,6vw,4rem)] text-white">
+  <div class="container-site flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">
     <div>
-      <h2>Ready to modernize your enterprise systems?</h2>
-      <p>Let’s talk about the people, processes, and platforms your mission needs next.</p>
+      <h2 class="mb-2 text-[clamp(1.6rem,3vw,2.2rem)] text-white">Ready to modernize your enterprise systems?</h2>
+      <p class="text-white/80">Let’s talk about the people, processes, and platforms your mission needs next.</p>
     </div>
-    <a routerLink="/contact" class="btn btn-primary">Get in touch</a>
+    <a routerLink="/contact" class="btn btn-primary shrink-0">Get in touch</a>
   </div>
 </section>

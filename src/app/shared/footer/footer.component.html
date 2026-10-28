@@ -1,53 +1,53 @@
-<footer class="site-footer">
-  <div class="container footer-grid">
-    <div class="footer-brand">
-      <a routerLink="/" class="brand-link">
+<footer class="bg-gradient-to-b from-navy-900 to-navy-950 pt-[clamp(3.5rem,7vw,5rem)] text-white/80">
+  <div class="container-site grid grid-cols-1 gap-8 pb-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_repeat(3,1fr)] lg:gap-10">
+    <div>
+      <a routerLink="/" class="mb-4 inline-flex items-center gap-2.5 no-underline">
         <span class="brand-badge" aria-hidden="true">
           <span class="brand-badge-text">i360</span>
         </span>
-        <span class="brand-copy" aria-hidden="true">
-          <span class="brand-suffix">technologies</span>
-          <span class="brand-tagline">results.teamwork.integrity</span>
+        <span class="flex flex-col gap-0.5" aria-hidden="true">
+          <span class="font-display text-[1.2rem] font-semibold leading-none tracking-tight text-[#5b9be8]">technologies</span>
+          <span class="font-display text-[0.62rem] font-medium leading-none text-[#9aa6b2]">results.teamwork.integrity</span>
         </span>
         <span class="sr-only">i360technologies</span>
       </a>
-      <p class="blurb">
+      <p class="max-w-[28ch] text-white/70">
         Agile, innovative enterprise solutions for Federal agencies — delivered with quality,
         efficiency, and integrity.
       </p>
     </div>
 
     <div>
-      <h3>Explore</h3>
-      <ul>
-        <li><a routerLink="/about">About Us</a></li>
-        <li><a routerLink="/services">Services</a></li>
-        <li><a routerLink="/contract-vehicles">Contract Vehicles</a></li>
-        <li><a routerLink="/careers">Careers</a></li>
-        <li><a routerLink="/contact">Contact</a></li>
+      <h3 class="mb-3.5 text-[0.9375rem] text-white">Explore</h3>
+      <ul class="grid gap-2">
+        <li><a class="text-white/80 no-underline hover:text-brand-400" routerLink="/about">About Us</a></li>
+        <li><a class="text-white/80 no-underline hover:text-brand-400" routerLink="/services">Services</a></li>
+        <li><a class="text-white/80 no-underline hover:text-brand-400" routerLink="/contract-vehicles">Contract Vehicles</a></li>
+        <li><a class="text-white/80 no-underline hover:text-brand-400" routerLink="/careers">Careers</a></li>
+        <li><a class="text-white/80 no-underline hover:text-brand-400" routerLink="/contact">Contact</a></li>
       </ul>
     </div>
 
     <div>
-      <h3>{{ company.hq.label }}</h3>
+      <h3 class="mb-3.5 text-[0.9375rem] text-white">{{ company.hq.label }}</h3>
       @for (line of company.hq.lines; track line) {
-        <p>{{ line }}</p>
+        <p class="mb-1">{{ line }}</p>
       }
-      <h3 class="spaced">{{ company.branch.label }}</h3>
+      <h3 class="mb-3.5 mt-6 text-[0.9375rem] text-white">{{ company.branch.label }}</h3>
       @for (line of company.branch.lines; track line) {
-        <p>{{ line }}</p>
+        <p class="mb-1">{{ line }}</p>
       }
     </div>
 
     <div>
-      <h3>Connect</h3>
-      <p><a [href]="'tel:' + company.phone">{{ company.phone }}</a></p>
-      <p><a [href]="'mailto:' + company.email">{{ company.email }}</a></p>
-      <a routerLink="/contact" class="btn btn-primary footer-cta">Contact Us</a>
+      <h3 class="mb-3.5 text-[0.9375rem] text-white">Connect</h3>
+      <p class="mb-1"><a class="text-white/80 no-underline hover:text-brand-400" [href]="'tel:' + company.phone">{{ company.phone }}</a></p>
+      <p class="mb-1"><a class="text-white/80 no-underline hover:text-brand-400" [href]="'mailto:' + company.email">{{ company.email }}</a></p>
+      <a routerLink="/contact" class="btn btn-primary mt-5">Contact Us</a>
     </div>
   </div>
 
-  <div class="container footer-bottom">
+  <div class="container-site flex flex-wrap justify-between gap-4 border-t border-white/10 py-5 text-sm text-white/55">
     <p>© {{ year }} i360technologies, Inc. All rights reserved.</p>
     <p>Equal Opportunity Employer — Minority / Female / Veteran / Disability</p>
   </div>

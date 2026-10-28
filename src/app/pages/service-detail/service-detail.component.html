@@ -1,40 +1,43 @@
 @if (service(); as item) {
   <section class="page-hero">
-    <div class="container">
-      <p class="crumb"><a routerLink="/services">Services</a> / {{ item.title }}</p>
+    <div class="container-site relative z-[1]">
+      <p class="mb-4 text-[0.95rem] text-white/70">
+        <a class="text-brand-400 no-underline hover:text-brand-400" routerLink="/services">Services</a>
+        / {{ item.title }}
+      </p>
       <h1>{{ item.title }}</h1>
       <p>{{ item.summary }}</p>
     </div>
   </section>
 
-  <section class="section">
-    <div class="container detail-layout">
-      <div class="prose">
+  <section class="section-y">
+    <div class="container-site grid items-start gap-8 lg:grid-cols-[minmax(0,1fr)_16.5rem] lg:gap-12">
+      <div class="max-w-[46rem]">
         @for (paragraph of item.body; track paragraph) {
-          <p>{{ paragraph }}</p>
+          <p class="mb-4 text-ink-muted">{{ paragraph }}</p>
         }
 
         @if (item.highlights?.length) {
-          <div class="highlights">
+          <div class="my-8 grid gap-3.5">
             @for (highlight of item.highlights; track highlight.title) {
-              <article>
-                <h3>{{ highlight.title }}</h3>
-                <p>{{ highlight.description }}</p>
+              <article class="rounded-xl border-l-[3px] border-brand-500 bg-surface px-5 py-4">
+                <h3 class="mb-1.5 text-[1.05rem]">{{ highlight.title }}</h3>
+                <p class="m-0 text-ink-muted">{{ highlight.description }}</p>
               </article>
             }
           </div>
         }
 
-        <a routerLink="/contact" class="btn btn-primary">Discuss this capability</a>
+        <a routerLink="/contact" class="btn btn-primary mt-6">Discuss this capability</a>
       </div>
 
-      <aside class="related">
-        <h3>Other services</h3>
-        <ul>
+      <aside class="sticky top-[calc(4.75rem+1.5rem)] rounded-xl border border-line bg-surface p-5 max-lg:static">
+        <h3 class="mb-3.5 text-[0.95rem]">Other services</h3>
+        <ul class="grid gap-2.5">
           @for (other of related; track other.slug) {
             @if (other.slug !== item.slug) {
               <li>
-                <a [routerLink]="['/services', other.slug]">{{ other.title }}</a>
+                <a class="text-[0.95rem] text-ink-soft no-underline hover:text-brand-600" [routerLink]="['/services', other.slug]">{{ other.title }}</a>
               </li>
             }
           }
@@ -43,10 +46,10 @@
     </div>
   </section>
 } @else {
-  <section class="section">
-    <div class="container">
-      <h1>Service not found</h1>
-      <p>The service you requested is unavailable.</p>
+  <section class="section-y">
+    <div class="container-site">
+      <h1 class="mb-3">Service not found</h1>
+      <p class="mb-6 text-ink-muted">The service you requested is unavailable.</p>
       <a routerLink="/services" class="btn btn-dark">Back to services</a>
     </div>
   </section>

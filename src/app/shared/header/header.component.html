@@ -1,42 +1,51 @@
-<header class="site-header" [class.is-scrolled]="scrolled" [class.is-open]="menuOpen">
-  <div class="container header-inner">
-    <a routerLink="/" class="brand" (click)="closeMenu()" aria-label="i360technologies home">
-      <span class="brand-badge" aria-hidden="true">
-        <span class="brand-badge-text">i360</span>
+<header
+  class="site-header sticky top-0 z-[100] h-[4.75rem] border-b border-transparent bg-white/85 backdrop-blur-[14px] transition"
+  [class.is-scrolled]="scrolled"
+  [class.is-open]="menuOpen"
+>
+  <div class="container-site flex h-full items-center justify-between gap-6">
+    <a routerLink="/" class="inline-flex shrink-0 items-center gap-2.5 no-underline" (click)="closeMenu()" aria-label="i360technologies home">
+      <span class="brand-badge max-[420px]:h-11 max-[420px]:w-11" aria-hidden="true">
+        <span class="brand-badge-text max-[420px]:text-sm">i360</span>
       </span>
-      <span class="brand-copy" aria-hidden="true">
-        <span class="brand-suffix">technologies</span>
-        <span class="brand-tagline">results.teamwork.integrity</span>
+      <span class="flex min-w-0 flex-col gap-0.5" aria-hidden="true">
+        <span class="font-display text-[1.2rem] font-semibold leading-none tracking-tight text-[#1e56a0] max-[420px]:text-[1.05rem]">technologies</span>
+        <span class="font-display text-[0.62rem] font-medium leading-none tracking-wide text-[#7a8694] max-[420px]:hidden">results.teamwork.integrity</span>
       </span>
     </a>
 
     <button
-      class="menu-toggle"
+      class="menu-toggle hidden h-11 w-11 flex-col items-center justify-center gap-[5px] rounded-md max-[959px]:inline-flex"
       type="button"
       [attr.aria-expanded]="menuOpen"
       aria-controls="primary-nav"
       (click)="toggleMenu()"
     >
       <span class="sr-only">Menu</span>
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
+      <span class="bar block h-0.5 w-5 rounded-sm bg-ink transition"></span>
+      <span class="bar block h-0.5 w-5 rounded-sm bg-ink transition"></span>
+      <span class="bar block h-0.5 w-5 rounded-sm bg-ink transition"></span>
     </button>
 
-    <nav id="primary-nav" class="nav" [class.is-open]="menuOpen" aria-label="Primary">
-      <ul class="nav-list">
+    <nav
+      id="primary-nav"
+      class="primary-nav flex items-center gap-5"
+      [class.is-open]="menuOpen"
+      aria-label="Primary"
+    >
+      <ul class="nav-list flex items-center gap-0.5">
         @for (link of links; track link.path) {
           <li
-            class="nav-item"
-            [class.has-children]="!!link.children"
+            class="relative"
             (mouseenter)="onNavEnter(link.label)"
             (mouseleave)="onNavLeave()"
           >
             @if (link.children) {
               <button
                 type="button"
-                class="nav-link nav-trigger"
-                [class.is-active]="openDropdown === link.label"
+                class="nav-link inline-flex items-center gap-1.5 rounded-full px-3.5 py-2 font-display text-[0.9375rem] font-medium text-ink-soft no-underline transition hover:bg-brand-50 hover:text-ink"
+                [class.bg-brand-50]="openDropdown === link.label"
+                [class.text-ink]="openDropdown === link.label"
                 (click)="toggleDropdown(link.label, $event)"
                 [attr.aria-expanded]="openDropdown === link.label"
               >
@@ -45,20 +54,32 @@
                   <path d="M1 1.5 6 6.5 11 1.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
                 </svg>
               </button>
-              <ul class="dropdown" [class.is-open]="openDropdown === link.label">
-                @for (child of link.children; track child.path) {
-                  <li>
-                    <a [routerLink]="child.path" routerLinkActive="active" (click)="closeMenu()">
-                      {{ child.label }}
-                    </a>
-                  </li>
-                }
+              <ul
+                class="dropdown pointer-events-none invisible absolute left-0 top-full z-20 min-w-[15.5rem] pt-2 opacity-0 transition"
+                [class.is-open]="openDropdown === link.label"
+              >
+                <li class="rounded-xl border border-line bg-white p-2 shadow-soft">
+                  <ul>
+                    @for (child of link.children; track child.path) {
+                      <li>
+                        <a
+                          class="block rounded-md px-3 py-2.5 text-[0.9375rem] text-ink-soft no-underline hover:bg-brand-50 hover:text-brand-700"
+                          [routerLink]="child.path"
+                          routerLinkActive="bg-brand-50 text-brand-700"
+                          (click)="closeMenu()"
+                        >
+                          {{ child.label }}
+                        </a>
+                      </li>
+                    }
+                  </ul>
+                </li>
               </ul>
             } @else {
               <a
-                class="nav-link"
+                class="nav-link inline-flex items-center gap-1.5 rounded-full px-3.5 py-2 font-display text-[0.9375rem] font-medium text-ink-soft no-underline transition hover:bg-brand-50 hover:text-ink"
                 [routerLink]="link.path"
-                routerLinkActive="active"
+                routerLinkActive="bg-brand-50 text-ink"
                 (click)="closeMenu()"
               >
                 {{ link.label }}
@@ -68,7 +89,7 @@
         }
       </ul>
 
-      <a routerLink="/contact" class="btn btn-primary header-cta" (click)="closeMenu()">
+      <a routerLink="/contact" class="btn btn-primary header-cta shrink-0" (click)="closeMenu()">
         Talk with us
       </a>
     </nav>
