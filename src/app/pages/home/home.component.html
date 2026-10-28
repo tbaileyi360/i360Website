@@ -1,0 +1,119 @@
+<section class="hero">
+  <div class="hero-media" aria-hidden="true"></div>
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="container hero-content">
+    <p class="hero-brand">i360technologies</p>
+    <h1>Enterprise solutions built for federal mission outcomes.</h1>
+    <p class="hero-lead">
+      Providing agile and innovative enterprise solutions in a timely and fiscally responsible manner.
+    </p>
+    <div class="hero-actions">
+      <a routerLink="/services" class="btn btn-primary">Explore services</a>
+      <a routerLink="/contact" class="btn btn-secondary">Contact us</a>
+    </div>
+  </div>
+</section>
+
+<section class="alert-strip">
+  <div class="container alert-inner">
+    <div>
+      <strong>Recruitment scam alert</strong>
+      <p>
+        Unauthorized parties may impersonate i360 recruiters. Verify all outreach before sharing information.
+      </p>
+    </div>
+    <a routerLink="/careers" class="btn btn-outline">Read guidance</a>
+  </div>
+</section>
+
+<section class="section services-section">
+  <div class="container">
+    <div class="section-intro">
+      <span class="section-label">What we deliver</span>
+      <h2 class="section-title">A full suite of enterprise capabilities</h2>
+      <p class="section-lead">
+        From Oracle Federal Financials to RPA, analytics, and custom applications — we bring the
+        people, process, and technology federal agencies need.
+      </p>
+    </div>
+
+    <div class="service-grid">
+      @for (service of services; track service.slug; let i = $index) {
+        <a
+          class="service-card"
+          [routerLink]="['/services', service.slug]"
+          [style.animation-delay]="i * 60 + 'ms'"
+        >
+          <span class="service-index">{{ i + 1 | number: '2.0-0' }}</span>
+          <h3>{{ service.title }}</h3>
+          <p>{{ service.short }}</p>
+          <span class="learn-more">Learn more →</span>
+        </a>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section trust-section">
+  <div class="container trust-grid">
+    <div>
+      <span class="section-label">Why agencies choose i360</span>
+      <h2 class="section-title">Trusted advisors since 2001</h2>
+      <p class="section-lead">
+        We specialize in modernizing federal financial systems and enabling operational improvement
+        with the right mix of people, processes, and technology.
+      </p>
+      <div class="stat-row">
+        <div>
+          <strong>2001</strong>
+          <span>Founded</span>
+        </div>
+        <div>
+          <strong>Fed</strong>
+          <span>Focused</span>
+        </div>
+        <div>
+          <strong>SB</strong>
+          <span>Small business</span>
+        </div>
+      </div>
+      <a routerLink="/about" class="btn btn-dark">About i360</a>
+    </div>
+    <div class="trust-panel">
+      <blockquote>
+        “{{ testimonials[0].quote }}”
+      </blockquote>
+      <cite>— {{ testimonials[0].attribution }}</cite>
+    </div>
+  </div>
+</section>
+
+<section class="section partners-section">
+  <div class="container">
+    <div class="section-intro centered">
+      <span class="section-label">Partners & associations</span>
+      <h2 class="section-title">Strategically aligned for deeper capability</h2>
+      <p class="section-lead">
+        We maintain deep expertise with the products and competencies our clients rely on.
+      </p>
+    </div>
+    <div class="partner-grid">
+      @for (partner of partners; track partner.name) {
+        <article class="partner-card">
+          <h3>{{ partner.name }}</h3>
+          <p>{{ partner.detail }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container cta-inner">
+    <div>
+      <h2>Ready to modernize your enterprise systems?</h2>
+      <p>Let’s talk about the people, processes, and platforms your mission needs next.</p>
+    </div>
+    <a routerLink="/contact" class="btn btn-primary">Get in touch</a>
+  </div>
+</section>

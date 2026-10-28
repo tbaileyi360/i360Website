@@ -1,0 +1,98 @@
+.alert-card {
+  padding: clamp(1.5rem, 4vw, 2.25rem);
+  border-radius: var(--radius-lg);
+  background: #fff8f0;
+  border: 1px solid #f0d7b8;
+}
+
+.alert-card h2 {
+  font-size: clamp(1.4rem, 2.5vw, 1.85rem);
+  margin-bottom: 0.85rem;
+}
+
+.alert-card > p {
+  color: var(--muted);
+  max-width: 56rem;
+  margin-bottom: 1.5rem;
+}
+
+.alert-points {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.alert-points h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.7rem;
+}
+
+.alert-points ul {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.alert-points li {
+  position: relative;
+  padding-left: 1.1rem;
+  color: var(--ink-soft);
+}
+
+.alert-points li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55rem;
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  background: var(--green-500);
+}
+
+.careers-band {
+  background: var(--surface);
+}
+
+.careers-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.careers-grid h2 {
+  font-size: clamp(1.45rem, 2.5vw, 1.9rem);
+  margin-bottom: 0.9rem;
+}
+
+.careers-grid p {
+  color: var(--muted);
+}
+
+.careers-grid p + p {
+  margin-top: 0.9rem;
+}
+
+.benefit-list {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.benefit-list li {
+  padding: 0.75rem 0.9rem;
+  border-radius: var(--radius-sm);
+  background: #fff;
+  border: 1px solid var(--line);
+}
+
+.eeo {
+  color: var(--muted);
+  font-size: 0.98rem;
+  max-width: 52rem;
+}
+
+@media (max-width: 800px) {
+  .alert-points,
+  .careers-grid {
+    grid-template-columns: 1fr;
+  }
+}

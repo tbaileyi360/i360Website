@@ -1,0 +1,24 @@
+<section class="page-hero">
+  <div class="container">
+    <h1>Services</h1>
+    <p>
+      A full range of consulting and systems integration capabilities for federal financial,
+      operational, and technology programs.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container service-list">
+    @for (service of services; track service.slug; let i = $index) {
+      <article class="service-row">
+        <div class="service-copy">
+          <span class="index">{{ i + 1 | number: '2.0-0' }}</span>
+          <h2>{{ service.title }}</h2>
+          <p>{{ service.summary }}</p>
+        </div>
+        <a class="btn btn-outline" [routerLink]="['/services', service.slug]">View details</a>
+      </article>
+    }
+  </div>
+</section>

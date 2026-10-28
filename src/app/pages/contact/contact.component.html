@@ -1,0 +1,60 @@
+<section class="page-hero">
+  <div class="container">
+    <h1>Contact Us</h1>
+    <p>Reach our team for partnership, proposal, or careers questions.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container contact-layout">
+    <div class="contact-details">
+      <article>
+        <h2>Mailing address</h2>
+        <p>i360technologies, Inc.</p>
+        @for (line of company.hq.lines; track line) {
+          <p>{{ line }}</p>
+        }
+      </article>
+      <article>
+        <h2>Phone & email</h2>
+        <p><a [href]="'tel:' + company.phone">{{ company.phone }}</a></p>
+        <p>Fax: {{ company.fax }}</p>
+        <p><a [href]="'mailto:' + company.email">{{ company.email }}</a></p>
+      </article>
+      <article>
+        <h2>Branch office</h2>
+        @for (line of company.branch.lines; track line) {
+          <p>{{ line }}</p>
+        }
+      </article>
+    </div>
+
+    <form class="contact-form" [formGroup]="form" (ngSubmit)="submit()" novalidate>
+      <h2>Send a message</h2>
+      <p class="form-lead">We’ll open your email client with the details ready to send.</p>
+
+      <label>
+        <span>Name</span>
+        <input type="text" formControlName="name" autocomplete="name" />
+      </label>
+      <label>
+        <span>Email</span>
+        <input type="email" formControlName="email" autocomplete="email" />
+      </label>
+      <label>
+        <span>Organization</span>
+        <input type="text" formControlName="organization" autocomplete="organization" />
+      </label>
+      <label>
+        <span>Message</span>
+        <textarea rows="5" formControlName="message"></textarea>
+      </label>
+
+      <button class="btn btn-primary" type="submit">Send message</button>
+
+      @if (submitted) {
+        <p class="success">Thanks — your email draft should be ready to send.</p>
+      }
+    </form>
+  </div>
+</section>

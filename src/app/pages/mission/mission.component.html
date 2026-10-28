@@ -1,0 +1,49 @@
+<section class="page-hero">
+  <div class="container">
+    <h1>Mission, Vision & Values</h1>
+    <p>The principles that guide how we serve customers, employees, partners, and communities.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container mv-grid">
+    <article>
+      <span class="section-label">Mission</span>
+      <h2>Understand. Respect. Deliver.</h2>
+      <p>
+        To understand and respect the needs, expectations, and goals of our customers, employees,
+        and partners, and to provide agile and innovative solutions in a timely and fiscally
+        responsible manner.
+      </p>
+    </article>
+    <article>
+      <span class="section-label">Vision</span>
+      <h2>Lead through modernization and expertise.</h2>
+      <p>
+        To be a leader in the information technology services marketplace by leveraging our
+        capability to migrate from legacy environments, our in-depth knowledge of advanced
+        technology, and our subject matter expertise.
+      </p>
+      <p>
+        To create a dynamic place to work that is challenging, rewarding, creative, and respectful
+        of ideas, innovations, and individuals — while providing excellent value and making a
+        positive impact on our communities.
+      </p>
+    </article>
+  </div>
+</section>
+
+<section class="section values-section">
+  <div class="container">
+    <span class="section-label">Values</span>
+    <h2 class="section-title">results.teamwork.integrity</h2>
+    <div class="values-grid">
+      @for (value of values; track value.name) {
+        <article>
+          <h3>{{ value.name }}</h3>
+          <p>{{ value.description }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>

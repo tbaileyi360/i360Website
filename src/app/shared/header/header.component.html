@@ -1,0 +1,76 @@
+<header class="site-header" [class.is-scrolled]="scrolled" [class.is-open]="menuOpen">
+  <div class="container header-inner">
+    <a routerLink="/" class="brand" (click)="closeMenu()" aria-label="i360technologies home">
+      <span class="brand-badge" aria-hidden="true">
+        <span class="brand-badge-text">i360</span>
+      </span>
+      <span class="brand-copy" aria-hidden="true">
+        <span class="brand-suffix">technologies</span>
+        <span class="brand-tagline">results.teamwork.integrity</span>
+      </span>
+    </a>
+
+    <button
+      class="menu-toggle"
+      type="button"
+      [attr.aria-expanded]="menuOpen"
+      aria-controls="primary-nav"
+      (click)="toggleMenu()"
+    >
+      <span class="sr-only">Menu</span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <nav id="primary-nav" class="nav" [class.is-open]="menuOpen" aria-label="Primary">
+      <ul class="nav-list">
+        @for (link of links; track link.path) {
+          <li
+            class="nav-item"
+            [class.has-children]="!!link.children"
+            (mouseenter)="onNavEnter(link.label)"
+            (mouseleave)="onNavLeave()"
+          >
+            @if (link.children) {
+              <button
+                type="button"
+                class="nav-link nav-trigger"
+                [class.is-active]="openDropdown === link.label"
+                (click)="toggleDropdown(link.label, $event)"
+                [attr.aria-expanded]="openDropdown === link.label"
+              >
+                {{ link.label }}
+                <svg viewBox="0 0 12 8" width="10" height="7" aria-hidden="true">
+                  <path d="M1 1.5 6 6.5 11 1.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                </svg>
+              </button>
+              <ul class="dropdown" [class.is-open]="openDropdown === link.label">
+                @for (child of link.children; track child.path) {
+                  <li>
+                    <a [routerLink]="child.path" routerLinkActive="active" (click)="closeMenu()">
+                      {{ child.label }}
+                    </a>
+                  </li>
+                }
+              </ul>
+            } @else {
+              <a
+                class="nav-link"
+                [routerLink]="link.path"
+                routerLinkActive="active"
+                (click)="closeMenu()"
+              >
+                {{ link.label }}
+              </a>
+            }
+          </li>
+        }
+      </ul>
+
+      <a routerLink="/contact" class="btn btn-primary header-cta" (click)="closeMenu()">
+        Talk with us
+      </a>
+    </nav>
+  </div>
+</header>

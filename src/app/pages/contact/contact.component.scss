@@ -1,0 +1,95 @@
+.contact-layout {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.contact-details {
+  display: grid;
+  gap: 1rem;
+}
+
+.contact-details article {
+  padding: 1.35rem;
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+
+.contact-details h2 {
+  font-size: 1.05rem;
+  margin-bottom: 0.65rem;
+}
+
+.contact-details p {
+  color: var(--muted);
+}
+
+.contact-details a {
+  text-decoration: none;
+  color: var(--blue-700);
+  font-weight: 600;
+}
+
+.contact-form {
+  display: grid;
+  gap: 0.95rem;
+  padding: 1.75rem;
+  border-radius: var(--radius-lg);
+  background: #fff;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-sm);
+}
+
+.contact-form h2 {
+  font-size: 1.45rem;
+}
+
+.form-lead {
+  color: var(--muted);
+  margin-top: -0.35rem;
+  margin-bottom: 0.35rem;
+}
+
+label {
+  display: grid;
+  gap: 0.4rem;
+}
+
+label span {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+input,
+textarea {
+  width: 100%;
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 0.9rem;
+  font: inherit;
+  color: var(--ink);
+  background: #fff;
+  transition: border-color 0.2s var(--ease), box-shadow 0.2s var(--ease);
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--green-500);
+  box-shadow: 0 0 0 3px rgb(61 166 66 / 18%);
+}
+
+.success {
+  color: var(--green-700);
+  font-weight: 600;
+}
+
+@media (max-width: 850px) {
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+}

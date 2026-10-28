@@ -1,0 +1,54 @@
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a routerLink="/" class="brand-link">
+        <span class="brand-badge" aria-hidden="true">
+          <span class="brand-badge-text">i360</span>
+        </span>
+        <span class="brand-copy" aria-hidden="true">
+          <span class="brand-suffix">technologies</span>
+          <span class="brand-tagline">results.teamwork.integrity</span>
+        </span>
+        <span class="sr-only">i360technologies</span>
+      </a>
+      <p class="blurb">
+        Agile, innovative enterprise solutions for Federal agencies — delivered with quality,
+        efficiency, and integrity.
+      </p>
+    </div>
+
+    <div>
+      <h3>Explore</h3>
+      <ul>
+        <li><a routerLink="/about">About Us</a></li>
+        <li><a routerLink="/services">Services</a></li>
+        <li><a routerLink="/contract-vehicles">Contract Vehicles</a></li>
+        <li><a routerLink="/careers">Careers</a></li>
+        <li><a routerLink="/contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3>{{ company.hq.label }}</h3>
+      @for (line of company.hq.lines; track line) {
+        <p>{{ line }}</p>
+      }
+      <h3 class="spaced">{{ company.branch.label }}</h3>
+      @for (line of company.branch.lines; track line) {
+        <p>{{ line }}</p>
+      }
+    </div>
+
+    <div>
+      <h3>Connect</h3>
+      <p><a [href]="'tel:' + company.phone">{{ company.phone }}</a></p>
+      <p><a [href]="'mailto:' + company.email">{{ company.email }}</a></p>
+      <a routerLink="/contact" class="btn btn-primary footer-cta">Contact Us</a>
+    </div>
+  </div>
+
+  <div class="container footer-bottom">
+    <p>© {{ year }} i360technologies, Inc. All rights reserved.</p>
+    <p>Equal Opportunity Employer — Minority / Female / Veteran / Disability</p>
+  </div>
+</footer>

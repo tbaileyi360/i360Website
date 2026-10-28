@@ -1,0 +1,22 @@
+<section class="page-hero">
+  <div class="container">
+    <h1>Our Leadership</h1>
+    <p>
+      i360 is led by an experienced executive team that has worked together since our inception in
+      2001.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container leader-grid">
+    @for (leader of leaders; track leader.name) {
+      <article class="leader-card">
+        <div class="avatar" aria-hidden="true">{{ leader.name.charAt(0) }}</div>
+        <h2>{{ leader.name }}</h2>
+        <p class="title">{{ leader.title }}</p>
+        <p>{{ leader.bio }}</p>
+      </article>
+    }
+  </div>
+</section>
