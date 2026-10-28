@@ -7,6 +7,12 @@ export const COMPANY_ROUTES: Routes = [
     title: 'About — i360technologies',
   },
   {
+    path: 'capabilities',
+    loadComponent: () =>
+      import('./capabilities/capabilities.component').then((m) => m.CapabilitiesComponent),
+    title: 'Capabilities — i360technologies',
+  },
+  {
     path: 'mission',
     loadComponent: () => import('./mission/mission.component').then((m) => m.MissionComponent),
     title: 'Mission, Vision & Values — i360technologies',
@@ -18,3 +24,4 @@ export const COMPANY_ROUTES: Routes = [
     title: 'Leadership — i360technologies',
   },
 ];
+

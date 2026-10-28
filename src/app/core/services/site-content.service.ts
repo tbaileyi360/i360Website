@@ -1,6 +1,12 @@
 import { Injectable } from '@angular/core';
 import {
+  CAPABILITIES,
+  CAPABILITY_CUSTOMERS,
+  CAPABILITY_OVERVIEW,
   COMPANY,
+  COMPANY_IDENTIFIERS,
+  CONTRACT_VEHICLES,
+  DIFFERENTIATORS,
   LEADERSHIP,
   NAICS,
   NAV_LINKS,
@@ -10,8 +16,12 @@ import {
   VALUES,
 } from '../data/site.content';
 import {
+  CapabilityItem,
+  CompanyIdentifiers,
   CompanyInfo,
   CompanyValue,
+  ContractVehicle,
+  Differentiator,
   Leader,
   NavLink,
   Partner,
@@ -29,6 +39,12 @@ export class SiteContentService {
   readonly leadership: Leader[] = LEADERSHIP;
   readonly values: CompanyValue[] = VALUES;
   readonly naics: string[] = NAICS;
+  readonly capabilityOverview = CAPABILITY_OVERVIEW;
+  readonly capabilities: CapabilityItem[] = CAPABILITIES;
+  readonly differentiators: Differentiator[] = DIFFERENTIATORS;
+  readonly capabilityCustomers: string[] = CAPABILITY_CUSTOMERS;
+  readonly contractVehicles: ContractVehicle[] = CONTRACT_VEHICLES;
+  readonly identifiers: CompanyIdentifiers = COMPANY_IDENTIFIERS;
 
   getServiceBySlug(slug: string): ServiceItem | undefined {
     return this.services.find((service) => service.slug === slug);

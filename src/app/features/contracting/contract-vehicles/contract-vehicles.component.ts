@@ -10,5 +10,7 @@ import { SiteContentService } from '../../../core/services/site-content.service'
 export class ContractVehiclesComponent {
   private readonly content = inject(SiteContentService);
 
+  readonly vehicles = this.content.contractVehicles;
+  readonly identifiers = this.content.identifiers;
   readonly naics = this.content.naics;
 }

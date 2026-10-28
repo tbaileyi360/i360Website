@@ -8,38 +8,100 @@
 </section>
 
 <section class="section-y">
-  <div class="container-site grid grid-cols-1 gap-5 md:grid-cols-2">
-    <article class="rounded-[20px] border border-line bg-surface p-7">
-      <span class="section-label">GSA</span>
-      <h2 class="mb-3.5 text-[1.7rem]">GSA Schedule</h2>
-      <p class="text-ink-muted">
-        Access i360 capabilities through GSA Schedule contracting for streamlined federal
-        acquisition.
+  <div class="container-site">
+    <div class="mb-10 max-w-2xl">
+      <span class="section-label">How to buy</span>
+      <h2 class="mb-4 max-w-[18ch] text-[clamp(1.85rem,3.5vw,2.75rem)]">
+        Active vehicles and agency pathways
+      </h2>
+      <p class="text-lg text-ink-muted">
+        i360 is a small business under primary NAICS 541512, available through GSA governmentwide
+        vehicles and key agency BPAs.
       </p>
-    </article>
-    <article class="rounded-[20px] border border-line bg-surface p-7">
-      <span class="section-label">FAA</span>
-      <h2 class="mb-3.5 text-[1.7rem]">eFAST</h2>
-      <p class="text-ink-muted">
-        i360 is a holder of the FAA eFAST contract vehicle — supporting business administration,
-        systems development, systems support, and documentation &amp; training functional areas.
-      </p>
-      <p class="mt-4 font-display font-semibold text-brand-700">Contract inquiries: eFASTinfo&#64;i360technologies.com</p>
-    </article>
+    </div>
+
+    <div class="grid grid-cols-1 gap-5 lg:grid-cols-2">
+      @for (vehicle of vehicles; track vehicle.contractId || vehicle.title) {
+        <article class="rounded-[20px] border border-line bg-surface p-7">
+          <span class="section-label">{{ vehicle.agency }}</span>
+          <h2 class="mb-2 text-[1.55rem]">{{ vehicle.title }}</h2>
+          @if (vehicle.contractId) {
+            <p class="mb-3 font-display text-sm font-semibold text-brand-700">
+              {{ vehicle.contractId }}
+            </p>
+          }
+          <p class="text-ink-muted">{{ vehicle.summary }}</p>
+          @if (vehicle.details?.length) {
+            <ul class="mt-4 grid gap-2">
+              @for (detail of vehicle.details; track detail) {
+                <li class="rounded-md border border-line bg-white px-3.5 py-2.5 text-[0.95rem] text-ink-soft">
+                  {{ detail }}
+                </li>
+              }
+            </ul>
+          }
+          @if (vehicle.contactEmail) {
+            <p class="mt-4 font-display font-semibold text-brand-700">
+              Contract inquiries:
+              <a
+                class="text-brand-700 no-underline hover:text-brand-600"
+                [href]="'mailto:' + vehicle.contactEmail"
+              >
+                {{ vehicle.contactEmail }}
+              </a>
+            </p>
+          }
+        </article>
+      }
+    </div>
   </div>
 </section>
 
 <section class="section-y bg-surface-cream">
-  <div class="container-site">
-    <span class="section-label">NAICS</span>
-    <h2 class="mb-2 max-w-[18ch] text-[clamp(1.85rem,3.5vw,2.75rem)]">Industry classifications</h2>
-    <p class="mb-7 max-w-2xl text-lg text-ink-muted">
-      Primary: 541512 — Computer Systems Design Services
-    </p>
-    <ul class="grid grid-cols-1 gap-2.5 md:grid-cols-2">
-      @for (code of naics; track code) {
-        <li class="rounded-md border border-line bg-white px-4 py-3 text-[0.95rem]">{{ code }}</li>
-      }
-    </ul>
+  <div class="container-site grid items-start gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+    <div>
+      <span class="section-label">Company identifiers</span>
+      <h2 class="mb-5 text-[clamp(1.5rem,2.5vw,2rem)]">Ready for market research</h2>
+      <dl class="grid gap-3 rounded-[20px] border border-line bg-white p-6">
+        <div class="grid gap-1 sm:grid-cols-[10rem_1fr]">
+          <dt class="font-display text-sm font-semibold text-ink">Legal name</dt>
+          <dd class="text-ink-muted">{{ identifiers.legalName }}</dd>
+        </div>
+        <div class="grid gap-1 sm:grid-cols-[10rem_1fr]">
+          <dt class="font-display text-sm font-semibold text-ink">Size status</dt>
+          <dd class="text-ink-muted">{{ identifiers.sizeStatus }}</dd>
+        </div>
+        <div class="grid gap-1 sm:grid-cols-[10rem_1fr]">
+          <dt class="font-display text-sm font-semibold text-ink">UEI</dt>
+          <dd class="text-ink-muted">{{ identifiers.uei }}</dd>
+        </div>
+        <div class="grid gap-1 sm:grid-cols-[10rem_1fr]">
+          <dt class="font-display text-sm font-semibold text-ink">CAGE</dt>
+          <dd class="text-ink-muted">{{ identifiers.cage }}</dd>
+        </div>
+        <div class="grid gap-1 sm:grid-cols-[10rem_1fr]">
+          <dt class="font-display text-sm font-semibold text-ink">Founded</dt>
+          <dd class="text-ink-muted">{{ identifiers.founded }}</dd>
+        </div>
+        <div class="grid gap-1 sm:grid-cols-[10rem_1fr]">
+          <dt class="font-display text-sm font-semibold text-ink">Primary NAICS</dt>
+          <dd class="text-ink-muted">{{ identifiers.primaryNaics }}</dd>
+        </div>
+      </dl>
+    </div>
+
+    <div>
+      <span class="section-label">NAICS</span>
+      <h2 class="mb-2 text-[clamp(1.5rem,2.5vw,2rem)]">Industry classifications</h2>
+      <p class="mb-6 max-w-xl text-ink-muted">
+        Primary size-standard NAICS is 541512. Additional codes appear across solicitations and
+        OASIS+ coverage.
+      </p>
+      <ul class="grid grid-cols-1 gap-2.5 sm:grid-cols-2">
+        @for (code of naics; track code) {
+          <li class="rounded-md border border-line bg-white px-4 py-3 text-[0.95rem]">{{ code }}</li>
+        }
+      </ul>
+    </div>
   </div>
 </section>

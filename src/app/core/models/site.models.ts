@@ -50,3 +50,32 @@ export interface CompanyValue {
   name: string;
   description: string;
 }
+
+export interface CapabilityItem {
+  title: string;
+  proof: string;
+  relatedService?: string;
+}
+
+export interface Differentiator {
+  title: string;
+  description: string;
+}
+
+export interface ContractVehicle {
+  agency: string;
+  title: string;
+  contractId?: string;
+  summary: string;
+  details?: string[];
+  contactEmail?: string;
+}
+
+export interface CompanyIdentifiers {
+  legalName: string;
+  sizeStatus: string;
+  uei: string;
+  cage: string;
+  founded: string;
+  primaryNaics: string;
+}

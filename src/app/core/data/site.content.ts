@@ -1,6 +1,10 @@
 import {
+  CapabilityItem,
+  CompanyIdentifiers,
   CompanyInfo,
   CompanyValue,
+  ContractVehicle,
+  Differentiator,
   Leader,
   NavLink,
   Partner,
@@ -31,6 +35,7 @@ export const NAV_LINKS: NavLink[] = [
     path: '/about',
     children: [
       { label: 'About Us', path: '/about' },
+      { label: 'Capabilities', path: '/capabilities' },
       { label: 'Mission, Vision & Values', path: '/mission' },
       { label: 'Leadership', path: '/leadership' },
     ],
@@ -174,11 +179,179 @@ export const SERVICES: ServiceItem[] = [
 ];
 
 export const PARTNERS: Partner[] = [
-  { name: 'Oracle Partner', detail: 'Gold-level Oracle expertise across Federal Financials and related stacks.' },
+  {
+    name: 'Oracle Partner',
+    detail: 'Deep Oracle E-Business Suite and Federal Financials expertise across federal shared service platforms.',
+  },
   { name: 'UiPath Partner', detail: 'Enterprise RPA delivery, CoE enablement, and platform architecture.' },
+  { name: 'Scaled Agile Partner', detail: 'SAFe-aligned delivery and Lean-Agile transformation support for federal programs.' },
   { name: 'Infor Partner', detail: 'Corporate partnership supporting modern ERP and operations solutions.' },
   { name: 'Association of Government Accountants', detail: 'Professional alignment with public-sector financial excellence.' },
   { name: 'Project Management Institute', detail: 'Commitment to recognized program and project management standards.' },
+];
+
+export const CAPABILITY_OVERVIEW =
+  'i360 is a small-business federal IT and financial-management systems integrator, founded in 2001. Our core franchise is Oracle E-Business Suite and Oracle Federal Financials for federal shared service providers — with proven depth in agency migrations, R12 upgrades, Treasury-mandate integrations, reporting, and a federally recognized UiPath RPA program.';
+
+export const CAPABILITIES: CapabilityItem[] = [
+  {
+    title: 'Oracle EBS / Federal Financials O&M',
+    proof:
+      'Prime support to OMB-designated FM shared service providers — including long-running OFF and CLM support at DOI Interior Business Center and Delphi/PRISM support at FAA Enterprise Services Center.',
+    relatedService: 'financial-management',
+  },
+  {
+    title: 'Agency migrations onto shared services',
+    proof:
+      'Multiple OFF and contract lifecycle management implementations onto SSP platforms, including first-of-kind PRISM deployments and agency onboarding to ESC Delphi/PRISM.',
+    relatedService: 'financial-management',
+  },
+  {
+    title: 'Upgrades and patching',
+    proof:
+      'End-to-end Oracle upgrades and ongoing quarterly security patching for large multi-agency shared service environments.',
+    relatedService: 'operations-maintenance',
+  },
+  {
+    title: 'Interfaces and Treasury integrations',
+    proof:
+      'Complex federal interface landscapes spanning G-Invoicing, IPP, IPAC, GTAS, CARS, SPS, travel, banking, and real-time PRISM–OFF integration patterns.',
+    relatedService: 'financial-management',
+  },
+  {
+    title: 'Federal FM operations and audit support',
+    proof:
+      'Month-, quarter-, and year-end close; DATA Act and GTAS deliverables; Subledger Accounting SME support with outcomes that include clean reconciliations and unqualified audit opinions.',
+    relatedService: 'financial-management',
+  },
+  {
+    title: 'Reporting, BI, and analytics',
+    proof:
+      'OBIEE/OAS, BI Publisher, Enterprise Command Center, and Power BI reporting modernization for shared service customers and acquisition systems.',
+    relatedService: 'business-intelligence',
+  },
+  {
+    title: 'RPA and intelligent automation',
+    proof:
+      'Built and sustained an ESC RPA Center of Excellence with UiPath ATO, unattended bots delivering significant labor-hour savings, and recognized innovation awards.',
+    relatedService: 'rpa',
+  },
+  {
+    title: 'Agile / SAFe delivery',
+    proof:
+      'Led Lean-Agile/SAFe transformation work at ESC, with Scaled Agile partnership, two-week sprints, and PI planning on current programs.',
+    relatedService: 'program-project-management',
+  },
+  {
+    title: 'Application modernization',
+    proof:
+      'Modernization of time-and-labor and related applications (.NET upgrades, Telerik reporting) plus Power Platform and APEX delivery experience.',
+    relatedService: 'application-development',
+  },
+  {
+    title: 'PMO, OCM, and training',
+    proof:
+      'PMP-led program management across multi-task-order SSP work, plus go-live training, train-the-trainer, job aids, and hypercare for large agency implementations.',
+    relatedService: 'program-project-management',
+  },
+];
+
+export const DIFFERENTIATORS: Differentiator[] = [
+  {
+    title: 'Shared service provider depth',
+    description:
+      'Prime support to two OMB-designated FM shared service providers (IBC and ESC), plus Treasury ARC experience — the foundation of our federal financial systems franchise.',
+  },
+  {
+    title: 'Incumbent continuity',
+    description:
+      'Continuous delivery at FAA ESC since 2010 and at DOI IBC since 2014, reducing transition risk for complex multi-agency platforms.',
+  },
+  {
+    title: 'Treasury mandate expertise',
+    description:
+      'Hands-on delivery of G-Invoicing, GTAS, DATA Act, IPP, and related Treasury integrations that agencies must get right.',
+  },
+  {
+    title: 'Agile and SAFe leadership',
+    description:
+      'Proven Lean-Agile transformation support and Scaled Agile partnership, including inaugural SAFe work at ESC.',
+  },
+  {
+    title: 'Customer-validated quality',
+    description:
+      'Strong past-performance feedback on management and delivery, with innovation recognition for RPA outcomes.',
+  },
+  {
+    title: 'Prime self-performance',
+    description:
+      'A track record of performing critical task orders with i360 teams end to end — accountable ownership, not layered handoffs.',
+  },
+];
+
+export const CAPABILITY_CUSTOMERS: string[] = [
+  'DOI Interior Business Center and customer agencies',
+  'DOT FAA Enterprise Services Center',
+  'Treasury Bureau of the Fiscal Service (ARC) and CDFI Fund',
+  'Department of Commerce BAS (as subcontractor)',
+  'Additional civilian and DoD programs through SSP and teaming work',
+];
+
+export const COMPANY_IDENTIFIERS: CompanyIdentifiers = {
+  legalName: 'i360technologies, Inc.',
+  sizeStatus: 'Small Business',
+  uei: 'GK7KYFNWZKA8',
+  cage: '1TZB3',
+  founded: '2001',
+  primaryNaics: '541512 — Computer Systems Design Services',
+};
+
+export const CONTRACT_VEHICLES: ContractVehicle[] = [
+  {
+    agency: 'GSA',
+    title: 'Multiple Award Schedule (MAS)',
+    contractId: '47QTCA20D008V',
+    summary:
+      'Streamlined access to i360 IT and financial-management services through GSA MAS, including FM QSMO marketplace SINs.',
+    details: [
+      'SIN 54151S — Information Technology Professional Services',
+      'SIN 518210C — Cloud Computing and Cloud Related IT Professional Services',
+      'SIN 518210FM — Financial Management Services (Solution/Service Adoption & Transition; Technology Operations Support)',
+      'Period of performance through April 8, 2030',
+    ],
+  },
+  {
+    agency: 'GSA',
+    title: 'OASIS+ Small Business',
+    contractId: '47QRCA25DSB97',
+    summary:
+      'Governmentwide vehicle for complex professional services — Management & Advisory and Technical & Engineering domains.',
+    details: ['Period of performance December 19, 2024 – December 18, 2029'],
+  },
+  {
+    agency: 'FAA',
+    title: 'eFAST',
+    contractId: 'DTFAWA10A-00002',
+    summary:
+      'FAA Electronic FAA Accelerated and Simplified Tasks MOA supporting business administration, systems development, systems support, and documentation & training.',
+    contactEmail: 'eFASTinfo@i360technologies.com',
+  },
+  {
+    agency: 'FAA ESC',
+    title: 'Teaming Partner BPA (TP2)',
+    contractId: '6973GH-24-A-00001',
+    summary:
+      'Active FAA Enterprise Services Center teaming partner BPA covering RPA, application modernization, and related financial systems support.',
+    details: ['Active through October 2028'],
+  },
+  {
+    agency: 'EXIM',
+    title: 'Agency BPA',
+    contractId: '83310123AF032',
+    summary:
+      'Export-Import Bank of the United States BPA for technical and financial management systems support.',
+    details: ['Period of performance June 2023 – June 2028'],
+  },
 ];
 
 export const TESTIMONIALS: Testimonial[] = [
