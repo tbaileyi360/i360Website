@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {
+  AI_CAPABILITY_SECTION,
   CAPABILITIES,
   CAPABILITY_CUSTOMERS,
   CAPABILITY_OVERVIEW,
@@ -16,6 +17,7 @@ import {
   VALUES,
 } from '../data/site.content';
 import {
+  AiCapabilitySection,
   CapabilityItem,
   CompanyIdentifiers,
   CompanyInfo,
@@ -43,6 +45,7 @@ export class SiteContentService {
   readonly capabilities: CapabilityItem[] = CAPABILITIES;
   readonly differentiators: Differentiator[] = DIFFERENTIATORS;
   readonly capabilityCustomers: string[] = CAPABILITY_CUSTOMERS;
+  readonly aiCapability: AiCapabilitySection = AI_CAPABILITY_SECTION;
   readonly contractVehicles: ContractVehicle[] = CONTRACT_VEHICLES;
   readonly identifiers: CompanyIdentifiers = COMPANY_IDENTIFIERS;
 

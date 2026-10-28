@@ -5,6 +5,7 @@ export interface ServiceItem {
   summary: string;
   body: string[];
   highlights?: { title: string; description: string }[];
+  seeAlso?: { label: string; path: string; fragment?: string };
 }
 
 export interface NavLink {
@@ -78,4 +79,17 @@ export interface CompanyIdentifiers {
   cage: string;
   founded: string;
   primaryNaics: string;
+}
+
+export interface AiOffering {
+  title: string;
+  description: string;
+  relatedService?: string;
+}
+
+export interface AiCapabilitySection {
+  headline: string;
+  intro: string[];
+  offerings: AiOffering[];
+  delivery: string[];
 }

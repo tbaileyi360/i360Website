@@ -13,6 +13,7 @@ export class CapabilitiesComponent {
 
   readonly overview = this.content.capabilityOverview;
   readonly capabilities = this.content.capabilities;
+  readonly ai = this.content.aiCapability;
   readonly differentiators = this.content.differentiators;
   readonly customers = this.content.capabilityCustomers;
 }

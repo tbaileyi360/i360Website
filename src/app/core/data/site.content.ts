@@ -1,4 +1,5 @@
 import {
+  AiCapabilitySection,
   CapabilityItem,
   CompanyIdentifiers,
   CompanyInfo,
@@ -69,6 +70,7 @@ export const SERVICES: ServiceItem[] = [
       'Throughout our corporate history, i360 has focused on implementing, upgrading, and supporting Oracle Federal Financials (OFF) applications and related technologies specifically for Federal Government agencies.',
       'Our most extensive experience is configuring and integrating OFF solutions to transform Federal Financial Management accounting, operations, reporting, analytics, and internal controls — achieving operational improvement, regulatory compliance, data integrity, and clean financial statements.',
       'Our consultants combine deep OFF expertise with private-sector GAAP experience, enabling us to configure core functionality in innovative ways that meet complex requirements without costly customizations.',
+      'We also apply AI-assisted help desk and O&M practices on long-lived Oracle Federal Financials estates — improving responsiveness while keeping humans in the loop for financial actions.',
     ],
     highlights: [
       {
@@ -84,6 +86,11 @@ export const SERVICES: ServiceItem[] = [
         description: 'Business process improvement grounded in commercial best practices.',
       },
     ],
+    seeAlso: {
+      label: 'AI & intelligent automation on Capabilities',
+      path: '/capabilities',
+      fragment: 'ai',
+    },
   },
   {
     slug: 'rpa',
@@ -95,6 +102,7 @@ export const SERVICES: ServiceItem[] = [
       'Our RPA solutions help clients establish and manage thriving automation programs. We set every client up for long-term success by building best practices, procedures, and robust platform architecture.',
       'Our methodology covers Center of Excellence creation, pipeline generation, platform architecture, development standards, and support operations — helping clients avoid common scalability and security pitfalls.',
       'We deliver across industry-leading platforms including UiPath and Blue Prism.',
+      'Federal RPA programs are moving toward governed, agentic platforms. i360 extends CoE work from production bots to exception-handling agents — reusing authorized platforms, bot identities, and human-in-the-loop controls for finance operations.',
     ],
     highlights: [
       {
@@ -110,6 +118,11 @@ export const SERVICES: ServiceItem[] = [
         description: 'Best-practice bots, training workshops, and helpdesk methodologies.',
       },
     ],
+    seeAlso: {
+      label: 'AI & intelligent automation on Capabilities',
+      path: '/capabilities',
+      fragment: 'ai',
+    },
   },
   {
     slug: 'program-project-management',
@@ -174,7 +187,13 @@ export const SERVICES: ServiceItem[] = [
     body: [
       'Our operations and maintenance teams keep enterprise systems healthy day to day while identifying opportunities for performance and process improvement.',
       'We provide responsive support, proactive monitoring practices, and continuous enhancement so agencies can focus on mission outcomes.',
+      'On Oracle EBS / Federal Financials managed services, we use AI-assisted triage and knowledge support to strengthen help desk and O&M performance — without removing human approval from financial postings.',
     ],
+    seeAlso: {
+      label: 'AI & intelligent automation on Capabilities',
+      path: '/capabilities',
+      fragment: 'ai',
+    },
   },
 ];
 
@@ -296,6 +315,40 @@ export const CAPABILITY_CUSTOMERS: string[] = [
   'Department of Commerce BAS (as subcontractor)',
   'Additional civilian and DoD programs through SSP and teaming work',
 ];
+
+export const AI_CAPABILITY_SECTION: AiCapabilitySection = {
+  headline: 'Governed automation on the Oracle and RPA estates we already run',
+  intro: [
+    'Federal demand for AI in financial management is landing inside shared-service Oracle platforms and RPA programs agencies already operate — driven by audit readiness, payment integrity, and pressure for measurable outcomes.',
+    'i360’s path is agentic upgrades and AI-assisted O&M on that base, with human oversight on financial actions — not a greenfield AI practice.',
+  ],
+  offerings: [
+    {
+      title: 'RPA → agentic modernization',
+      description:
+        'Upgrade existing UiPath bot fleets to exception-handling agents on authorized public-sector platforms. Builds on the FAA ESC RPA Center of Excellence — including production unattended bots, UiPath ATO patterns, and governed bot credentialing.',
+      relatedService: 'rpa',
+    },
+    {
+      title: 'AI-augmented Oracle EBS / OFF managed service',
+      description:
+        'GenAI-assisted ticket triage, knowledge support, and patch/regression assistance for long-lived OFF O&M at shared service providers. Builds on IBC and ESC help desk, upgrades, and Treasury interface support.',
+      relatedService: 'operations-maintenance',
+    },
+    {
+      title: 'Audit-readiness & reconciliation automation',
+      description:
+        'Matching, evidence packaging, and close support as an extension of month-/year-end close, GTAS, and DATA Act work — helping CFOs meet evidence burdens without treating AI as a substitute for controls.',
+      relatedService: 'financial-management',
+    },
+  ],
+  delivery: [
+    'Deliver on authorized platforms (for example FedRAMP-oriented UiPath public-sector clouds and OCI Generative AI patterns) rather than seeking a standalone FedRAMP package for every component.',
+    'Keep a human approver on financial postings and payment-related actions.',
+    'Reuse existing bot identity and ATO patterns where they already exist.',
+    'Approach Oracle Fusion AI agents through teaming until i360 holds owned Fusion references.',
+  ],
+};
 
 export const COMPANY_IDENTIFIERS: CompanyIdentifiers = {
   legalName: 'i360technologies, Inc.',

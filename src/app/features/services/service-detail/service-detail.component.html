@@ -28,6 +28,19 @@
           </div>
         }
 
+        @if (item.seeAlso) {
+          <p class="mt-6 text-ink-muted">
+            Learn more:
+            <a
+              class="font-semibold text-navy-700 no-underline hover:text-brand-600"
+              [routerLink]="item.seeAlso.path"
+              [fragment]="item.seeAlso.fragment"
+            >
+              {{ item.seeAlso.label }}
+            </a>
+          </p>
+        }
+
         <a routerLink="/contact" class="btn btn-primary mt-6">Discuss this capability</a>
       </div>
 
