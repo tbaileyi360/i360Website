@@ -1,19 +1,14 @@
-export interface ServiceItem {
-  slug: string;
-  title: string;
-  short: string;
-  summary: string;
-  body: string[];
-  highlights?: { title: string; description: string }[];
-}
+import {
+  CompanyInfo,
+  CompanyValue,
+  Leader,
+  NavLink,
+  Partner,
+  ServiceItem,
+  Testimonial,
+} from '../models/site.models';
 
-export interface NavLink {
-  label: string;
-  path: string;
-  children?: { label: string; path: string }[];
-}
-
-export const COMPANY = {
+export const COMPANY: CompanyInfo = {
   name: 'i360technologies',
   tagline: 'results.teamwork.integrity',
   phone: '703-476-4100',
@@ -179,7 +174,7 @@ export const SERVICES: ServiceItem[] = [
   },
 ];
 
-export const PARTNERS = [
+export const PARTNERS: Partner[] = [
   { name: 'Oracle Partner', detail: 'Gold-level Oracle expertise across Federal Financials and related stacks.' },
   { name: 'UiPath Partner', detail: 'Enterprise RPA delivery, CoE enablement, and platform architecture.' },
   { name: 'Infor Partner', detail: 'Corporate partnership supporting modern ERP and operations solutions.' },
@@ -187,7 +182,7 @@ export const PARTNERS = [
   { name: 'Project Management Institute', detail: 'Commitment to recognized program and project management standards.' },
 ];
 
-export const TESTIMONIALS = [
+export const TESTIMONIALS: Testimonial[] = [
   {
     quote:
       'i360 provided a project team that was professional, thorough and knowledgeable, and the high quality of work products delivered reflected the project team’s capabilities and level of experience.',
@@ -195,7 +190,7 @@ export const TESTIMONIALS = [
   },
 ];
 
-export const LEADERSHIP = [
+export const LEADERSHIP: Leader[] = [
   {
     name: 'Mike Meyer',
     title: 'Chairman and Chief Executive Officer',
@@ -213,7 +208,7 @@ export const LEADERSHIP = [
   },
 ];
 
-export const VALUES = [
+export const VALUES: CompanyValue[] = [
   {
     name: 'Results',
     description:
@@ -241,7 +236,7 @@ export const VALUES = [
   },
 ];
 
-export const NAICS = [
+export const NAICS: string[] = [
   '518210 — Data Processing, Hosting, and Related Services',
   '519190 — All Other Information Services',
   '541219 — Other Accounting Services',
@@ -262,6 +257,3 @@ export const NAICS = [
   '611710 — Educational Support Services',
 ];
 
-export function getServiceBySlug(slug: string): ServiceItem | undefined {
-  return SERVICES.find((service) => service.slug === slug);
-}

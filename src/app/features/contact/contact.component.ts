@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-import { COMPANY } from '../../data/content';
+import { SiteContentService } from '../../core/services/site-content.service';
 
 @Component({
   selector: 'app-contact',
@@ -11,8 +11,9 @@ import { COMPANY } from '../../data/content';
 })
 export class ContactComponent {
   private readonly fb = inject(FormBuilder);
+  private readonly content = inject(SiteContentService);
 
-  readonly company = COMPANY;
+  readonly company = this.content.company;
   submitted = false;
 
   readonly form = this.fb.nonNullable.group({

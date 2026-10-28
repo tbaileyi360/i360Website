@@ -1,7 +1,7 @@
 import { DecimalPipe } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { SERVICES } from '../../data/content';
+import { SiteContentService } from '../../../core/services/site-content.service';
 
 @Component({
   selector: 'app-services',
@@ -11,5 +11,7 @@ import { SERVICES } from '../../data/content';
   styleUrl: './services.component.scss',
 })
 export class ServicesComponent {
-  readonly services = SERVICES;
+  private readonly content = inject(SiteContentService);
+
+  readonly services = this.content.services;
 }

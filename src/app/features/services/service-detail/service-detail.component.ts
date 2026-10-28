@@ -1,9 +1,9 @@
 import { Component, effect, inject } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, RouterLink } from '@angular/router';
-import { toSignal } from '@angular/core/rxjs-interop';
 import { map } from 'rxjs';
-import { getServiceBySlug, SERVICES } from '../../data/content';
+import { SiteContentService } from '../../../core/services/site-content.service';
 
 @Component({
   selector: 'app-service-detail',
@@ -15,13 +15,20 @@ import { getServiceBySlug, SERVICES } from '../../data/content';
 export class ServiceDetailComponent {
   private readonly route = inject(ActivatedRoute);
   private readonly title = inject(Title);
+  private readonly content = inject(SiteContentService);
 
   readonly service = toSignal(
-    this.route.paramMap.pipe(map((params) => getServiceBySlug(params.get('slug') ?? ''))),
-    { initialValue: getServiceBySlug(this.route.snapshot.paramMap.get('slug') ?? '') }
+    this.route.paramMap.pipe(
+      map((params) => this.content.getServiceBySlug(params.get('slug') ?? ''))
+    ),
+    {
+      initialValue: this.content.getServiceBySlug(
+        this.route.snapshot.paramMap.get('slug') ?? ''
+      ),
+    }
   );
 
-  readonly related = SERVICES;
+  readonly related = this.content.services;
 
   constructor() {
     effect(() => {

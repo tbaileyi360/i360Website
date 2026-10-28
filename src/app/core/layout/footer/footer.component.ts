@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { COMPANY } from '../../data/content';
+import { SiteContentService } from '../../services/site-content.service';
 
 @Component({
   selector: 'app-footer',
@@ -10,6 +10,8 @@ import { COMPANY } from '../../data/content';
   styleUrl: './footer.component.scss',
 })
 export class FooterComponent {
-  readonly company = COMPANY;
+  private readonly content = inject(SiteContentService);
+
+  readonly company = this.content.company;
   readonly year = new Date().getFullYear();
 }

@@ -1,6 +1,6 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, inject } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { NAV_LINKS, COMPANY } from '../../data/content';
+import { SiteContentService } from '../../services/site-content.service';
 
 @Component({
   selector: 'app-header',
@@ -10,8 +10,10 @@ import { NAV_LINKS, COMPANY } from '../../data/content';
   styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
-  readonly company = COMPANY;
-  readonly links = NAV_LINKS;
+  private readonly content = inject(SiteContentService);
+
+  readonly company = this.content.company;
+  readonly links = this.content.navLinks;
   menuOpen = false;
   openDropdown: string | null = null;
   scrolled = false;

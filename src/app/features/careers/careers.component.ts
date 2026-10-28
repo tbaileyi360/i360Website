@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { COMPANY } from '../../data/content';
+import { Component, inject } from '@angular/core';
+import { SiteContentService } from '../../core/services/site-content.service';
 
 @Component({
   selector: 'app-careers',
@@ -8,7 +8,9 @@ import { COMPANY } from '../../data/content';
   styleUrl: './careers.component.scss',
 })
 export class CareersComponent {
-  readonly company = COMPANY;
+  private readonly content = inject(SiteContentService);
+
+  readonly company = this.content.company;
   readonly benefits = [
     'Medical, Vision, Dental',
     'Life, Long/Short Term Disability, AD&D',
