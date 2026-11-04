@@ -21,6 +21,17 @@
         <h2 class="mb-1.5 text-[1.35rem]">{{ leader.name }}</h2>
         <p class="mb-3.5 font-display font-semibold text-brand-700">{{ leader.title }}</p>
         <p class="text-ink-muted">{{ leader.bio }}</p>
+        @if (leader.linkedIn) {
+          <a
+            class="mt-4 inline-flex items-center gap-1.5 font-display text-sm font-semibold text-navy-700 no-underline hover:text-brand-600"
+            [href]="leader.linkedIn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn
+            <span class="sr-only">profile for {{ leader.name }}</span>
+          </a>
+        }
       </article>
     }
   </div>

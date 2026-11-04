@@ -45,6 +45,7 @@ export interface Leader {
   name: string;
   title: string;
   bio: string;
+  linkedIn?: string;
 }
 
 export interface CompanyValue {

@@ -420,16 +420,37 @@ export const LEADERSHIP: Leader[] = [
     name: 'Mike Meyer',
     title: 'Chairman and Chief Executive Officer',
     bio: 'Leads i360’s vision and strategy, guiding the firm since its founding in 2001.',
+    linkedIn: 'https://www.linkedin.com/in/mikemeyer/',
   },
   {
     name: 'Ed Willey',
-    title: 'Chief Operating Officer',
+    title: 'Chief Operating Officer & Board Member',
     bio: 'Oversees day-to-day operations and delivery excellence across client engagements.',
+    linkedIn: 'https://www.linkedin.com/in/edwilley/',
   },
   {
     name: 'Bart Perkins',
     title: 'Board of Directors Member',
     bio: 'Provides independent industry perspective and governance as a board member.',
+    linkedIn: 'https://www.linkedin.com/in/bart-perkins-202a58/',
+  },
+  {
+    name: 'Cary Payne',
+    title: 'Vice President',
+    bio: 'Leads Oracle systems integration and Federal Financials delivery across agency programs.',
+    linkedIn: 'https://www.linkedin.com/in/cary-payne-10a3b3/',
+  },
+  {
+    name: 'Douglas DiJoy',
+    title: 'Finance Director',
+    bio: 'Directs finance operations and corporate financial management for i360.',
+    linkedIn: 'https://www.linkedin.com/in/douglasdijoy/',
+  },
+  {
+    name: 'Patrice Ruggieri',
+    title: 'Director, Human Resources & Recruiting',
+    bio: 'Leads talent acquisition and HR strategy, aligning workforce planning with company goals.',
+    linkedIn: 'https://www.linkedin.com/in/patriceruggieri/',
   },
 ];
 
