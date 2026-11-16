@@ -1,5 +1,4 @@
-import { Component, inject } from '@angular/core';
-import { SiteContentService } from '../../core/services/site-content.service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-contact',
@@ -7,26 +6,4 @@ import { SiteContentService } from '../../core/services/site-content.service';
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss',
 })
-export class ContactComponent {
-  private readonly content = inject(SiteContentService);
-
-  readonly company = this.content.company;
-
-  readonly mailToHref = this.buildMailToHref();
-
-  private buildMailToHref(): string {
-    const subject = encodeURIComponent('Website inquiry');
-    const body = encodeURIComponent(
-      [
-        'Name: ',
-        'Email: ',
-        'Organization: ',
-        '',
-        'Message:',
-        '',
-      ].join('\n')
-    );
-
-    return `mailto:${this.company.email}?subject=${subject}&body=${body}`;
-  }
-}
+export class ContactComponent {}

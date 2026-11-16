@@ -1,6 +1,40 @@
-import { Component, HostListener, inject } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { SiteContentService } from '../../services/site-content.service';
+
+interface NavLink {
+  label: string;
+  path: string;
+  children?: { label: string; path: string }[];
+}
+
+const NAV_LINKS: NavLink[] = [
+  {
+    label: 'About',
+    path: '/about',
+    children: [
+      { label: 'About Us', path: '/about' },
+      { label: 'Capabilities', path: '/capabilities' },
+      { label: 'Mission, Vision & Values', path: '/mission' },
+      { label: 'Leadership', path: '/leadership' }
+    ]
+  },
+  {
+    label: 'Services',
+    path: '/services',
+    children: [
+      { label: 'All Services', path: '/services' },
+      { label: 'Financial Management', path: '/services/financial-management' },
+      { label: 'Robotic Process Automation', path: '/services/rpa' },
+      { label: 'Program & Project Management', path: '/services/program-project-management' },
+      { label: 'Acquisition Management', path: '/services/acquisition-management' },
+      { label: 'Business Intelligence', path: '/services/business-intelligence' },
+      { label: 'Application Development', path: '/services/application-development' },
+      { label: 'Operations & Maintenance', path: '/services/operations-maintenance' }
+    ]
+  },
+  { label: 'Contract Vehicles', path: '/contract-vehicles' },
+  { label: 'Careers', path: '/careers' }
+];
 
 @Component({
   selector: 'app-header',
@@ -10,10 +44,7 @@ import { SiteContentService } from '../../services/site-content.service';
   styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
-  private readonly content = inject(SiteContentService);
-
-  readonly company = this.content.company;
-  readonly links = this.content.navLinks;
+  readonly links = NAV_LINKS;
   menuOpen = false;
   openDropdown: string | null = null;
   scrolled = false;

@@ -45,18 +45,76 @@
     </div>
 
     <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-      @for (service of services; track service.slug; let i = $index) {
         <a
           class="flex min-h-56 animate-rise-in flex-col gap-3 rounded-[20px] border border-transparent bg-surface p-6 no-underline text-inherit transition hover:-translate-y-1 hover:border-brand-100 hover:bg-white hover:shadow-soft hover:no-underline hover:text-inherit"
-          [routerLink]="['/services', service.slug]"
-          [style.animation-delay]="i * 60 + 'ms'"
+          routerLink="/services/financial-management"
+          style="animation-delay: 0ms"
         >
-          <span class="font-display text-sm font-semibold text-brand-600">{{ i + 1 | number: '2.0-0' }}</span>
-          <h3 class="text-xl">{{ service.title }}</h3>
-          <p class="flex-1 text-ink-muted">{{ service.short }}</p>
+          <span class="font-display text-sm font-semibold text-brand-600">01</span>
+          <h3 class="text-xl">Financial Management Solutions</h3>
+          <p class="flex-1 text-ink-muted">Streamline federal financial processes with Oracle Federal Financials expertise.</p>
           <span class="font-display text-sm font-semibold text-navy-700 group-hover:text-brand-600">Learn more →</span>
         </a>
-      }
+        <a
+          class="flex min-h-56 animate-rise-in flex-col gap-3 rounded-[20px] border border-transparent bg-surface p-6 no-underline text-inherit transition hover:-translate-y-1 hover:border-brand-100 hover:bg-white hover:shadow-soft hover:no-underline hover:text-inherit"
+          routerLink="/services/rpa"
+          style="animation-delay: 60ms"
+        >
+          <span class="font-display text-sm font-semibold text-brand-600">02</span>
+          <h3 class="text-xl">Robotic Process Automation (RPA)</h3>
+          <p class="flex-1 text-ink-muted">Automate repetitive work while establishing lasting RPA best practices.</p>
+          <span class="font-display text-sm font-semibold text-navy-700 group-hover:text-brand-600">Learn more →</span>
+        </a>
+        <a
+          class="flex min-h-56 animate-rise-in flex-col gap-3 rounded-[20px] border border-transparent bg-surface p-6 no-underline text-inherit transition hover:-translate-y-1 hover:border-brand-100 hover:bg-white hover:shadow-soft hover:no-underline hover:text-inherit"
+          routerLink="/services/program-project-management"
+          style="animation-delay: 120ms"
+        >
+          <span class="font-display text-sm font-semibold text-brand-600">03</span>
+          <h3 class="text-xl">Program and Project Management</h3>
+          <p class="flex-1 text-ink-muted">Optimize program delivery through tailored management approaches.</p>
+          <span class="font-display text-sm font-semibold text-navy-700 group-hover:text-brand-600">Learn more →</span>
+        </a>
+        <a
+          class="flex min-h-56 animate-rise-in flex-col gap-3 rounded-[20px] border border-transparent bg-surface p-6 no-underline text-inherit transition hover:-translate-y-1 hover:border-brand-100 hover:bg-white hover:shadow-soft hover:no-underline hover:text-inherit"
+          routerLink="/services/acquisition-management"
+          style="animation-delay: 180ms"
+        >
+          <span class="font-display text-sm font-semibold text-brand-600">04</span>
+          <h3 class="text-xl">Acquisition Management Solutions</h3>
+          <p class="flex-1 text-ink-muted">Deep contract lifecycle expertise for public-sector clients.</p>
+          <span class="font-display text-sm font-semibold text-navy-700 group-hover:text-brand-600">Learn more →</span>
+        </a>
+        <a
+          class="flex min-h-56 animate-rise-in flex-col gap-3 rounded-[20px] border border-transparent bg-surface p-6 no-underline text-inherit transition hover:-translate-y-1 hover:border-brand-100 hover:bg-white hover:shadow-soft hover:no-underline hover:text-inherit"
+          routerLink="/services/business-intelligence"
+          style="animation-delay: 240ms"
+        >
+          <span class="font-display text-sm font-semibold text-brand-600">05</span>
+          <h3 class="text-xl">Business Intelligence and Analytics</h3>
+          <p class="flex-1 text-ink-muted">Modern reporting systems that unlock clearer business insights.</p>
+          <span class="font-display text-sm font-semibold text-navy-700 group-hover:text-brand-600">Learn more →</span>
+        </a>
+        <a
+          class="flex min-h-56 animate-rise-in flex-col gap-3 rounded-[20px] border border-transparent bg-surface p-6 no-underline text-inherit transition hover:-translate-y-1 hover:border-brand-100 hover:bg-white hover:shadow-soft hover:no-underline hover:text-inherit"
+          routerLink="/services/application-development"
+          style="animation-delay: 300ms"
+        >
+          <span class="font-display text-sm font-semibold text-brand-600">06</span>
+          <h3 class="text-xl">Application Development</h3>
+          <p class="flex-1 text-ink-muted">End-to-end custom web applications that are functional and scalable.</p>
+          <span class="font-display text-sm font-semibold text-navy-700 group-hover:text-brand-600">Learn more →</span>
+        </a>
+        <a
+          class="flex min-h-56 animate-rise-in flex-col gap-3 rounded-[20px] border border-transparent bg-surface p-6 no-underline text-inherit transition hover:-translate-y-1 hover:border-brand-100 hover:bg-white hover:shadow-soft hover:no-underline hover:text-inherit"
+          routerLink="/services/operations-maintenance"
+          style="animation-delay: 360ms"
+        >
+          <span class="font-display text-sm font-semibold text-brand-600">07</span>
+          <h3 class="text-xl">Operations and Maintenance</h3>
+          <p class="flex-1 text-ink-muted">Empower operational efficiencies and continuous improvement.</p>
+          <span class="font-display text-sm font-semibold text-navy-700 group-hover:text-brand-600">Learn more →</span>
+        </a>
     </div>
   </div>
 </section>
@@ -89,9 +147,9 @@
     <div class="relative overflow-hidden rounded-[20px] bg-navy-900 p-[clamp(1.75rem,4vw,2.75rem)] text-white shadow-soft-lg">
       <div class="pointer-events-none absolute -bottom-[40%] -right-[20%] h-56 w-56 rounded-full bg-brand-400/20"></div>
       <blockquote class="relative mb-5 text-[clamp(1.15rem,2vw,1.35rem)] leading-snug text-white/90">
-        “{{ testimonials[0].quote }}”
+        “i360 provided a project team that was professional, thorough and knowledgeable, and the high quality of work products delivered reflected the project team’s capabilities and level of experience.”
       </blockquote>
-      <cite class="relative font-display font-semibold not-italic text-brand-400">— {{ testimonials[0].attribution }}</cite>
+      <cite class="relative font-display font-semibold not-italic text-brand-400">— Civilian Agency</cite>
     </div>
   </div>
 </section>
@@ -106,12 +164,43 @@
       </p>
     </div>
     <div class="grid grid-cols-1 gap-3.5 sm:grid-cols-2 lg:grid-cols-3">
-      @for (partner of partners; track partner.name) {
-        <article class="min-h-[9.5rem] rounded-xl border border-line bg-white p-5">
-          <h3 class="mb-2 text-base">{{ partner.name }}</h3>
-          <p class="text-sm text-ink-muted">{{ partner.detail }}</p>
-        </article>
-      }
+      <article class="min-h-[9.5rem] rounded-xl border border-line bg-white p-5">
+        <h3 class="mb-2 text-base">Oracle Partner</h3>
+        <p class="text-sm text-ink-muted">
+          Deep Oracle E-Business Suite and Federal Financials expertise across federal
+          shared service platforms.
+        </p>
+      </article>
+      <article class="min-h-[9.5rem] rounded-xl border border-line bg-white p-5">
+        <h3 class="mb-2 text-base">UiPath Partner</h3>
+        <p class="text-sm text-ink-muted">
+          Enterprise RPA delivery, CoE enablement, and platform architecture.
+        </p>
+      </article>
+      <article class="min-h-[9.5rem] rounded-xl border border-line bg-white p-5">
+        <h3 class="mb-2 text-base">Scaled Agile Partner</h3>
+        <p class="text-sm text-ink-muted">
+          SAFe-aligned delivery and Lean-Agile transformation support for federal programs.
+        </p>
+      </article>
+      <article class="min-h-[9.5rem] rounded-xl border border-line bg-white p-5">
+        <h3 class="mb-2 text-base">Infor Partner</h3>
+        <p class="text-sm text-ink-muted">
+          Corporate partnership supporting modern ERP and operations solutions.
+        </p>
+      </article>
+      <article class="min-h-[9.5rem] rounded-xl border border-line bg-white p-5">
+        <h3 class="mb-2 text-base">Association of Government Accountants</h3>
+        <p class="text-sm text-ink-muted">
+          Professional alignment with public-sector financial excellence.
+        </p>
+      </article>
+      <article class="min-h-[9.5rem] rounded-xl border border-line bg-white p-5">
+        <h3 class="mb-2 text-base">Project Management Institute</h3>
+        <p class="text-sm text-ink-muted">
+          Commitment to recognized program and project management standards.
+        </p>
+      </article>
     </div>
   </div>
 </section>

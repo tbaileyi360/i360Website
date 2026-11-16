@@ -1,5 +1,4 @@
-import { Component, inject } from '@angular/core';
-import { SiteContentService } from '../../../core/services/site-content.service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-mission',
@@ -7,8 +6,4 @@ import { SiteContentService } from '../../../core/services/site-content.service'
   templateUrl: './mission.component.html',
   styleUrl: './mission.component.scss',
 })
-export class MissionComponent {
-  private readonly content = inject(SiteContentService);
-
-  readonly values = this.content.values;
-}
+export class MissionComponent {}

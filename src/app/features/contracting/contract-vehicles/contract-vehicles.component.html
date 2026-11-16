@@ -21,38 +21,101 @@
     </div>
 
     <div class="grid grid-cols-1 gap-5 lg:grid-cols-2">
-      @for (vehicle of vehicles; track vehicle.contractId || vehicle.title) {
         <article class="rounded-[20px] border border-line bg-surface p-7">
-          <span class="section-label">{{ vehicle.agency }}</span>
-          <h2 class="mb-2 text-[1.55rem]">{{ vehicle.title }}</h2>
-          @if (vehicle.contractId) {
-            <p class="mb-3 font-display text-sm font-semibold text-brand-700">
-              {{ vehicle.contractId }}
-            </p>
-          }
-          <p class="text-ink-muted">{{ vehicle.summary }}</p>
-          @if (vehicle.details?.length) {
-            <ul class="mt-4 grid gap-2">
-              @for (detail of vehicle.details; track detail) {
-                <li class="rounded-md border border-line bg-white px-3.5 py-2.5 text-[0.95rem] text-ink-soft">
-                  {{ detail }}
-                </li>
-              }
-            </ul>
-          }
-          @if (vehicle.contactEmail) {
-            <p class="mt-4 font-display font-semibold text-brand-700">
-              Contract inquiries:
-              <a
-                class="text-brand-700 no-underline hover:text-brand-600"
-                [href]="'mailto:' + vehicle.contactEmail"
-              >
-                {{ vehicle.contactEmail }}
-              </a>
-            </p>
-          }
+          <span class="section-label">GSA</span>
+          <h2 class="mb-2 text-[1.55rem]">Multiple Award Schedule (MAS)</h2>
+          <p class="mb-3 font-display text-sm font-semibold text-brand-700">
+            47QTCA20D008V
+          </p>
+          <p class="text-ink-muted">
+            Streamlined access to i360 IT and financial-management services through GSA MAS,
+            including FM QSMO marketplace SINs.
+          </p>
+          <ul class="mt-4 grid gap-2">
+            <li class="rounded-md border border-line bg-white px-3.5 py-2.5 text-[0.95rem] text-ink-soft">
+              SIN 54151S — Information Technology Professional Services
+            </li>
+            <li class="rounded-md border border-line bg-white px-3.5 py-2.5 text-[0.95rem] text-ink-soft">
+              SIN 518210C — Cloud Computing and Cloud Related IT Professional Services
+            </li>
+            <li class="rounded-md border border-line bg-white px-3.5 py-2.5 text-[0.95rem] text-ink-soft">
+              SIN 518210FM — Financial Management Services (Solution/Service Adoption &amp;
+              Transition; Technology Operations Support)
+            </li>
+            <li class="rounded-md border border-line bg-white px-3.5 py-2.5 text-[0.95rem] text-ink-soft">
+              Period of performance through April 8, 2030
+            </li>
+          </ul>
         </article>
-      }
+        <article class="rounded-[20px] border border-line bg-surface p-7">
+          <span class="section-label">GSA</span>
+          <h2 class="mb-2 text-[1.55rem]">OASIS+ Small Business</h2>
+          <p class="mb-3 font-display text-sm font-semibold text-brand-700">
+            47QRCA25DSB97
+          </p>
+          <p class="text-ink-muted">
+            Governmentwide vehicle for complex professional services — Management &amp;
+            Advisory and Technical &amp; Engineering domains.
+          </p>
+          <ul class="mt-4 grid gap-2">
+            <li class="rounded-md border border-line bg-white px-3.5 py-2.5 text-[0.95rem] text-ink-soft">
+              Period of performance December 19, 2024 – December 18, 2029
+            </li>
+          </ul>
+        </article>
+        <article class="rounded-[20px] border border-line bg-surface p-7">
+          <span class="section-label">FAA</span>
+          <h2 class="mb-2 text-[1.55rem]">eFAST</h2>
+          <p class="mb-3 font-display text-sm font-semibold text-brand-700">
+            DTFAWA10A-00002
+          </p>
+          <p class="text-ink-muted">
+            FAA Electronic FAA Accelerated and Simplified Tasks MOA supporting business
+            administration, systems development, systems support, and documentation &amp;
+            training.
+          </p>
+          <p class="mt-4 font-display font-semibold text-brand-700">
+            Contract inquiries:
+            <a
+              class="text-brand-700 no-underline hover:text-brand-600"
+              href="mailto:eFASTinfo@i360technologies.com"
+            >
+              eFASTinfo&#64;i360technologies.com
+            </a>
+          </p>
+        </article>
+        <article class="rounded-[20px] border border-line bg-surface p-7">
+          <span class="section-label">FAA ESC</span>
+          <h2 class="mb-2 text-[1.55rem]">Teaming Partner BPA (TP2)</h2>
+          <p class="mb-3 font-display text-sm font-semibold text-brand-700">
+            6973GH-24-A-00001
+          </p>
+          <p class="text-ink-muted">
+            Active FAA Enterprise Services Center teaming partner BPA covering RPA,
+            application modernization, and related financial systems support.
+          </p>
+          <ul class="mt-4 grid gap-2">
+            <li class="rounded-md border border-line bg-white px-3.5 py-2.5 text-[0.95rem] text-ink-soft">
+              Active through October 2028
+            </li>
+          </ul>
+        </article>
+        <article class="rounded-[20px] border border-line bg-surface p-7">
+          <span class="section-label">EXIM</span>
+          <h2 class="mb-2 text-[1.55rem]">Agency BPA</h2>
+          <p class="mb-3 font-display text-sm font-semibold text-brand-700">
+            83310123AF032
+          </p>
+          <p class="text-ink-muted">
+            Export-Import Bank of the United States BPA for technical and financial
+            management systems support.
+          </p>
+          <ul class="mt-4 grid gap-2">
+            <li class="rounded-md border border-line bg-white px-3.5 py-2.5 text-[0.95rem] text-ink-soft">
+              Period of performance June 2023 – June 2028
+            </li>
+          </ul>
+        </article>
     </div>
   </div>
 </section>
@@ -65,27 +128,27 @@
       <dl class="grid gap-3 rounded-[20px] border border-line bg-white p-6">
         <div class="grid gap-1 sm:grid-cols-[10rem_1fr]">
           <dt class="font-display text-sm font-semibold text-ink">Legal name</dt>
-          <dd class="text-ink-muted">{{ identifiers.legalName }}</dd>
+          <dd class="text-ink-muted">i360technologies, Inc.</dd>
         </div>
         <div class="grid gap-1 sm:grid-cols-[10rem_1fr]">
           <dt class="font-display text-sm font-semibold text-ink">Size status</dt>
-          <dd class="text-ink-muted">{{ identifiers.sizeStatus }}</dd>
+          <dd class="text-ink-muted">Small Business</dd>
         </div>
         <div class="grid gap-1 sm:grid-cols-[10rem_1fr]">
           <dt class="font-display text-sm font-semibold text-ink">UEI</dt>
-          <dd class="text-ink-muted">{{ identifiers.uei }}</dd>
+          <dd class="text-ink-muted">GK7KYFNWZKA8</dd>
         </div>
         <div class="grid gap-1 sm:grid-cols-[10rem_1fr]">
           <dt class="font-display text-sm font-semibold text-ink">CAGE</dt>
-          <dd class="text-ink-muted">{{ identifiers.cage }}</dd>
+          <dd class="text-ink-muted">1TZB3</dd>
         </div>
         <div class="grid gap-1 sm:grid-cols-[10rem_1fr]">
           <dt class="font-display text-sm font-semibold text-ink">Founded</dt>
-          <dd class="text-ink-muted">{{ identifiers.founded }}</dd>
+          <dd class="text-ink-muted">2001</dd>
         </div>
         <div class="grid gap-1 sm:grid-cols-[10rem_1fr]">
           <dt class="font-display text-sm font-semibold text-ink">Primary NAICS</dt>
-          <dd class="text-ink-muted">{{ identifiers.primaryNaics }}</dd>
+          <dd class="text-ink-muted">541512 — Computer Systems Design Services</dd>
         </div>
       </dl>
     </div>
@@ -98,9 +161,24 @@
         OASIS+ coverage.
       </p>
       <ul class="grid grid-cols-1 gap-2.5 sm:grid-cols-2">
-        @for (code of naics; track code) {
-          <li class="rounded-md border border-line bg-white px-4 py-3 text-[0.95rem]">{{ code }}</li>
-        }
+        <li class="rounded-md border border-line bg-white px-4 py-3 text-[0.95rem]">518210 — Data Processing, Hosting, and Related Services</li>
+        <li class="rounded-md border border-line bg-white px-4 py-3 text-[0.95rem]">519190 — All Other Information Services</li>
+        <li class="rounded-md border border-line bg-white px-4 py-3 text-[0.95rem]">541219 — Other Accounting Services</li>
+        <li class="rounded-md border border-line bg-white px-4 py-3 text-[0.95rem]">541330 — Engineering Services</li>
+        <li class="rounded-md border border-line bg-white px-4 py-3 text-[0.95rem]">541511 — Custom Computer Programming Services</li>
+        <li class="rounded-md border border-line bg-white px-4 py-3 text-[0.95rem]">541512 — Computer Systems Design Services (Primary)</li>
+        <li class="rounded-md border border-line bg-white px-4 py-3 text-[0.95rem]">541513 — Computer Facilities Management Services</li>
+        <li class="rounded-md border border-line bg-white px-4 py-3 text-[0.95rem]">541519 — Other Computer Related Services</li>
+        <li class="rounded-md border border-line bg-white px-4 py-3 text-[0.95rem]">541611 — Administrative Management and General Management Consulting Services</li>
+        <li class="rounded-md border border-line bg-white px-4 py-3 text-[0.95rem]">541613 — Marketing Consulting Services</li>
+        <li class="rounded-md border border-line bg-white px-4 py-3 text-[0.95rem]">541618 — Other Management Consulting Services</li>
+        <li class="rounded-md border border-line bg-white px-4 py-3 text-[0.95rem]">541990 — All Other Professional, Scientific, and Technical Services</li>
+        <li class="rounded-md border border-line bg-white px-4 py-3 text-[0.95rem]">561110 — Office Administrative Services</li>
+        <li class="rounded-md border border-line bg-white px-4 py-3 text-[0.95rem]">561410 — Document Preparation Services</li>
+        <li class="rounded-md border border-line bg-white px-4 py-3 text-[0.95rem]">561499 — All Other Business Support Services</li>
+        <li class="rounded-md border border-line bg-white px-4 py-3 text-[0.95rem]">611420 — Computer Training</li>
+        <li class="rounded-md border border-line bg-white px-4 py-3 text-[0.95rem]">611430 — Professional and Management Development Training</li>
+        <li class="rounded-md border border-line bg-white px-4 py-3 text-[0.95rem]">611710 — Educational Support Services</li>
       </ul>
     </div>
   </div>

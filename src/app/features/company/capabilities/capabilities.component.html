@@ -14,7 +14,13 @@
     <h2 class="mb-5 text-[clamp(1.7rem,3vw,2.3rem)]">
       Oracle Federal Financials depth at shared service scale
     </h2>
-    <p class="text-lg text-ink-muted">{{ overview }}</p>
+        <p class="text-lg text-ink-muted">
+      i360 is a small-business federal IT and financial-management systems integrator,
+      founded in 2001. Our core franchise is Oracle E-Business Suite and Oracle Federal
+      Financials for federal shared service providers — with proven depth in agency
+      migrations, R12 upgrades, Treasury-mandate integrations, reporting, and a federally
+      recognized UiPath RPA program.
+    </p>
   </div>
 </section>
 
@@ -32,20 +38,141 @@
     </div>
 
     <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
-      @for (item of capabilities; track item.title) {
         <article class="rounded-[20px] border border-line bg-white p-6">
-          <h3 class="mb-2.5 text-lg text-ink">{{ item.title }}</h3>
-          <p class="text-ink-muted">{{ item.proof }}</p>
-          @if (item.relatedService) {
-            <a
-              class="mt-4 inline-block font-display text-sm font-semibold text-brand-700 no-underline hover:text-brand-600"
-              [routerLink]="['/services', item.relatedService]"
-            >
-              Related service →
-            </a>
-          }
+          <h3 class="mb-2.5 text-lg text-ink">Oracle EBS / Federal Financials O&amp;M</h3>
+          <p class="text-ink-muted">
+            Prime support to OMB-designated FM shared service providers — including
+            long-running OFF and CLM support at DOI Interior Business Center and
+            Delphi/PRISM support at FAA Enterprise Services Center.
+          </p>
+          <a
+            class="mt-4 inline-block font-display text-sm font-semibold text-brand-700 no-underline hover:text-brand-600"
+            routerLink="/services/financial-management"
+          >
+            Related service →
+          </a>
         </article>
-      }
+        <article class="rounded-[20px] border border-line bg-white p-6">
+          <h3 class="mb-2.5 text-lg text-ink">Agency migrations onto shared services</h3>
+          <p class="text-ink-muted">
+            Multiple OFF and contract lifecycle management implementations onto SSP
+            platforms, including first-of-kind PRISM deployments and agency onboarding to
+            ESC Delphi/PRISM.
+          </p>
+          <a
+            class="mt-4 inline-block font-display text-sm font-semibold text-brand-700 no-underline hover:text-brand-600"
+            routerLink="/services/financial-management"
+          >
+            Related service →
+          </a>
+        </article>
+        <article class="rounded-[20px] border border-line bg-white p-6">
+          <h3 class="mb-2.5 text-lg text-ink">Upgrades and patching</h3>
+          <p class="text-ink-muted">
+            End-to-end Oracle upgrades and ongoing quarterly security patching for large
+            multi-agency shared service environments.
+          </p>
+          <a
+            class="mt-4 inline-block font-display text-sm font-semibold text-brand-700 no-underline hover:text-brand-600"
+            routerLink="/services/operations-maintenance"
+          >
+            Related service →
+          </a>
+        </article>
+        <article class="rounded-[20px] border border-line bg-white p-6">
+          <h3 class="mb-2.5 text-lg text-ink">Interfaces and Treasury integrations</h3>
+          <p class="text-ink-muted">
+            Complex federal interface landscapes spanning G-Invoicing, IPP, IPAC, GTAS,
+            CARS, SPS, travel, banking, and real-time PRISM–OFF integration patterns.
+          </p>
+          <a
+            class="mt-4 inline-block font-display text-sm font-semibold text-brand-700 no-underline hover:text-brand-600"
+            routerLink="/services/financial-management"
+          >
+            Related service →
+          </a>
+        </article>
+        <article class="rounded-[20px] border border-line bg-white p-6">
+          <h3 class="mb-2.5 text-lg text-ink">Federal FM operations and audit support</h3>
+          <p class="text-ink-muted">
+            Month-, quarter-, and year-end close; DATA Act and GTAS deliverables; Subledger
+            Accounting SME support with outcomes that include clean reconciliations and
+            unqualified audit opinions.
+          </p>
+          <a
+            class="mt-4 inline-block font-display text-sm font-semibold text-brand-700 no-underline hover:text-brand-600"
+            routerLink="/services/financial-management"
+          >
+            Related service →
+          </a>
+        </article>
+        <article class="rounded-[20px] border border-line bg-white p-6">
+          <h3 class="mb-2.5 text-lg text-ink">Reporting, BI, and analytics</h3>
+          <p class="text-ink-muted">
+            OBIEE/OAS, BI Publisher, Enterprise Command Center, and Power BI reporting
+            modernization for shared service customers and acquisition systems.
+          </p>
+          <a
+            class="mt-4 inline-block font-display text-sm font-semibold text-brand-700 no-underline hover:text-brand-600"
+            routerLink="/services/business-intelligence"
+          >
+            Related service →
+          </a>
+        </article>
+        <article class="rounded-[20px] border border-line bg-white p-6">
+          <h3 class="mb-2.5 text-lg text-ink">RPA and intelligent automation</h3>
+          <p class="text-ink-muted">
+            Built and sustained an ESC RPA Center of Excellence with UiPath ATO, unattended
+            bots delivering significant labor-hour savings, and recognized innovation
+            awards.
+          </p>
+          <a
+            class="mt-4 inline-block font-display text-sm font-semibold text-brand-700 no-underline hover:text-brand-600"
+            routerLink="/services/rpa"
+          >
+            Related service →
+          </a>
+        </article>
+        <article class="rounded-[20px] border border-line bg-white p-6">
+          <h3 class="mb-2.5 text-lg text-ink">Agile / SAFe delivery</h3>
+          <p class="text-ink-muted">
+            Led Lean-Agile/SAFe transformation work at ESC, with Scaled Agile partnership,
+            two-week sprints, and PI planning on current programs.
+          </p>
+          <a
+            class="mt-4 inline-block font-display text-sm font-semibold text-brand-700 no-underline hover:text-brand-600"
+            routerLink="/services/program-project-management"
+          >
+            Related service →
+          </a>
+        </article>
+        <article class="rounded-[20px] border border-line bg-white p-6">
+          <h3 class="mb-2.5 text-lg text-ink">Application modernization</h3>
+          <p class="text-ink-muted">
+            Modernization of time-and-labor and related applications (.NET upgrades, Telerik
+            reporting) plus Power Platform and APEX delivery experience.
+          </p>
+          <a
+            class="mt-4 inline-block font-display text-sm font-semibold text-brand-700 no-underline hover:text-brand-600"
+            routerLink="/services/application-development"
+          >
+            Related service →
+          </a>
+        </article>
+        <article class="rounded-[20px] border border-line bg-white p-6">
+          <h3 class="mb-2.5 text-lg text-ink">PMO, OCM, and training</h3>
+          <p class="text-ink-muted">
+            PMP-led program management across multi-task-order SSP work, plus go-live
+            training, train-the-trainer, job aids, and hypercare for large agency
+            implementations.
+          </p>
+          <a
+            class="mt-4 inline-block font-display text-sm font-semibold text-brand-700 no-underline hover:text-brand-600"
+            routerLink="/services/program-project-management"
+          >
+            Related service →
+          </a>
+        </article>
     </div>
   </div>
 </section>
@@ -55,39 +182,84 @@
     <div class="mb-10 max-w-2xl">
       <span class="section-label">AI &amp; intelligent automation</span>
       <h2 class="mb-4 max-w-[22ch] text-[clamp(1.85rem,3.5vw,2.75rem)]">
-        {{ ai.headline }}
+        Governed automation on the Oracle and RPA estates we already run
       </h2>
-      @for (paragraph of ai.intro; track paragraph) {
-        <p class="mb-4 text-lg text-ink-muted">{{ paragraph }}</p>
-      }
+      <p class="mb-4 text-lg text-ink-muted">
+        Federal demand for AI in financial management is landing inside shared-service
+        Oracle platforms and RPA programs agencies already operate — driven by audit
+        readiness, payment integrity, and pressure for measurable outcomes.
+      </p>
+      <p class="mb-4 text-lg text-ink-muted">
+        i360’s path is agentic upgrades and AI-assisted O&amp;M on that base, with human
+        oversight on financial actions — not a greenfield AI practice.
+      </p>
     </div>
 
     <div class="mb-10 grid grid-cols-1 gap-4 lg:grid-cols-3">
-      @for (offering of ai.offerings; track offering.title) {
         <article class="rounded-[20px] border border-line bg-surface p-6">
-          <h3 class="mb-2.5 text-lg text-ink">{{ offering.title }}</h3>
-          <p class="text-ink-muted">{{ offering.description }}</p>
-          @if (offering.relatedService) {
-            <a
-              class="mt-4 inline-block font-display text-sm font-semibold text-brand-700 no-underline hover:text-brand-600"
-              [routerLink]="['/services', offering.relatedService]"
-            >
-              Related service →
-            </a>
-          }
+          <h3 class="mb-2.5 text-lg text-ink">RPA → agentic modernization</h3>
+          <p class="text-ink-muted">
+            Upgrade existing UiPath bot fleets to exception-handling agents on authorized
+            public-sector platforms. Builds on the FAA ESC RPA Center of Excellence —
+            including production unattended bots, UiPath ATO patterns, and governed bot
+            credentialing.
+          </p>
+          <a
+            class="mt-4 inline-block font-display text-sm font-semibold text-brand-700 no-underline hover:text-brand-600"
+            routerLink="/services/rpa"
+          >
+            Related service →
+          </a>
         </article>
-      }
+        <article class="rounded-[20px] border border-line bg-surface p-6">
+          <h3 class="mb-2.5 text-lg text-ink">AI-augmented Oracle EBS / OFF managed service</h3>
+          <p class="text-ink-muted">
+            GenAI-assisted ticket triage, knowledge support, and patch/regression assistance
+            for long-lived OFF O&amp;M at shared service providers. Builds on IBC and ESC
+            help desk, upgrades, and Treasury interface support.
+          </p>
+          <a
+            class="mt-4 inline-block font-display text-sm font-semibold text-brand-700 no-underline hover:text-brand-600"
+            routerLink="/services/operations-maintenance"
+          >
+            Related service →
+          </a>
+        </article>
+        <article class="rounded-[20px] border border-line bg-surface p-6">
+          <h3 class="mb-2.5 text-lg text-ink">Audit-readiness &amp; reconciliation automation</h3>
+          <p class="text-ink-muted">
+            Matching, evidence packaging, and close support as an extension of
+            month-/year-end close, GTAS, and DATA Act work — helping CFOs meet evidence
+            burdens without treating AI as a substitute for controls.
+          </p>
+          <a
+            class="mt-4 inline-block font-display text-sm font-semibold text-brand-700 no-underline hover:text-brand-600"
+            routerLink="/services/financial-management"
+          >
+            Related service →
+          </a>
+        </article>
     </div>
 
     <div class="rounded-[20px] border border-line bg-surface-cream p-7">
       <h3 class="mb-4 text-[1.15rem]">How we deliver</h3>
       <ul class="grid gap-3">
-        @for (item of ai.delivery; track item) {
-          <li class="flex gap-3 text-ink-muted">
-            <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-600" aria-hidden="true"></span>
-            <span>{{ item }}</span>
-          </li>
-        }
+        <li class="flex gap-3 text-ink-muted">
+          <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-600" aria-hidden="true"></span>
+          <span>Deliver on authorized platforms (for example FedRAMP-oriented UiPath public-sector clouds and OCI Generative AI patterns) rather than seeking a standalone FedRAMP package for every component.</span>
+        </li>
+        <li class="flex gap-3 text-ink-muted">
+          <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-600" aria-hidden="true"></span>
+          <span>Keep a human approver on financial postings and payment-related actions.</span>
+        </li>
+        <li class="flex gap-3 text-ink-muted">
+          <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-600" aria-hidden="true"></span>
+          <span>Reuse existing bot identity and ATO patterns where they already exist.</span>
+        </li>
+        <li class="flex gap-3 text-ink-muted">
+          <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-600" aria-hidden="true"></span>
+          <span>Approach Oracle Fusion AI agents through teaming until i360 holds owned Fusion references.</span>
+        </li>
       </ul>
       <div class="mt-6 flex flex-wrap gap-3">
         <a routerLink="/services/rpa" class="btn btn-outline">RPA services</a>
@@ -108,12 +280,49 @@
     </div>
 
     <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-      @for (item of differentiators; track item.title) {
         <article class="rounded-xl border border-line bg-white p-5">
-          <h3 class="mb-2 text-[1.05rem] text-brand-700">{{ item.title }}</h3>
-          <p class="text-ink-muted">{{ item.description }}</p>
+          <h3 class="mb-2 text-[1.05rem] text-brand-700">Shared service provider depth</h3>
+          <p class="text-ink-muted">
+            Prime support to two OMB-designated FM shared service providers (IBC and ESC),
+            plus Treasury ARC experience — the foundation of our federal financial systems
+            franchise.
+          </p>
         </article>
-      }
+        <article class="rounded-xl border border-line bg-white p-5">
+          <h3 class="mb-2 text-[1.05rem] text-brand-700">Incumbent continuity</h3>
+          <p class="text-ink-muted">
+            Continuous delivery at FAA ESC since 2010 and at DOI IBC since 2014, reducing
+            transition risk for complex multi-agency platforms.
+          </p>
+        </article>
+        <article class="rounded-xl border border-line bg-white p-5">
+          <h3 class="mb-2 text-[1.05rem] text-brand-700">Treasury mandate expertise</h3>
+          <p class="text-ink-muted">
+            Hands-on delivery of G-Invoicing, GTAS, DATA Act, IPP, and related Treasury
+            integrations that agencies must get right.
+          </p>
+        </article>
+        <article class="rounded-xl border border-line bg-white p-5">
+          <h3 class="mb-2 text-[1.05rem] text-brand-700">Agile and SAFe leadership</h3>
+          <p class="text-ink-muted">
+            Proven Lean-Agile transformation support and Scaled Agile partnership, including
+            inaugural SAFe work at ESC.
+          </p>
+        </article>
+        <article class="rounded-xl border border-line bg-white p-5">
+          <h3 class="mb-2 text-[1.05rem] text-brand-700">Customer-validated quality</h3>
+          <p class="text-ink-muted">
+            Strong past-performance feedback on management and delivery, with innovation
+            recognition for RPA outcomes.
+          </p>
+        </article>
+        <article class="rounded-xl border border-line bg-white p-5">
+          <h3 class="mb-2 text-[1.05rem] text-brand-700">Prime self-performance</h3>
+          <p class="text-ink-muted">
+            A track record of performing critical task orders with i360 teams end to end —
+            accountable ownership, not layered handoffs.
+          </p>
+        </article>
     </div>
   </div>
 </section>
@@ -126,11 +335,21 @@
         Agency relationships that define our franchise
       </h2>
       <ul class="grid gap-3">
-        @for (customer of customers; track customer) {
-          <li class="rounded-xl border border-line bg-surface px-4 py-3.5 text-ink-soft">
-            {{ customer }}
-          </li>
-        }
+        <li class="rounded-xl border border-line bg-surface px-4 py-3.5 text-ink-soft">
+          DOI Interior Business Center and customer agencies
+        </li>
+        <li class="rounded-xl border border-line bg-surface px-4 py-3.5 text-ink-soft">
+          DOT FAA Enterprise Services Center
+        </li>
+        <li class="rounded-xl border border-line bg-surface px-4 py-3.5 text-ink-soft">
+          Treasury Bureau of the Fiscal Service (ARC) and CDFI Fund
+        </li>
+        <li class="rounded-xl border border-line bg-surface px-4 py-3.5 text-ink-soft">
+          Department of Commerce BAS (as subcontractor)
+        </li>
+        <li class="rounded-xl border border-line bg-surface px-4 py-3.5 text-ink-soft">
+          Additional civilian and DoD programs through SSP and teaming work
+        </li>
       </ul>
     </div>
 

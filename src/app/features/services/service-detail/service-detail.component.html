@@ -1,69 +1,527 @@
-@if (service(); as item) {
-  <section class="page-hero">
-    <div class="container-site relative z-[1]">
-      <p class="mb-4 text-[0.95rem] text-white/70">
-        <a class="text-brand-400 no-underline hover:text-brand-400" routerLink="/services">Services</a>
-        / {{ item.title }}
-      </p>
-      <h1>{{ item.title }}</h1>
-      <p>{{ item.summary }}</p>
-    </div>
-  </section>
+@switch (slug()) {
+  @case ('financial-management') {
+    <section class="page-hero">
+      <div class="container-site relative z-[1]">
+        <p class="mb-4 text-[0.95rem] text-white/70">
+          <a class="text-brand-400 no-underline hover:text-brand-400" routerLink="/services">Services</a>
+          / Financial Management Solutions
+        </p>
+        <h1>Financial Management Solutions</h1>
+        <p>
+          Innovative enterprise solutions that modernize accounting, reporting, analytics,
+          and internal controls for Federal agencies.
+        </p>
+      </div>
+    </section>
 
-  <section class="section-y">
-    <div class="container-site grid items-start gap-8 lg:grid-cols-[minmax(0,1fr)_16.5rem] lg:gap-12">
-      <div class="max-w-[46rem]">
-        @for (paragraph of item.body; track paragraph) {
-          <p class="mb-4 text-ink-muted">{{ paragraph }}</p>
-        }
+    <section class="section-y">
+      <div class="container-site grid items-start gap-8 lg:grid-cols-[minmax(0,1fr)_16.5rem] lg:gap-12">
+        <div class="max-w-[46rem]">
+          <p class="mb-4 text-ink-muted">
+            Throughout our corporate history, i360 has focused on implementing, upgrading,
+            and supporting Oracle Federal Financials (OFF) applications and related
+            technologies specifically for Federal Government agencies.
+          </p>
+          <p class="mb-4 text-ink-muted">
+            Our most extensive experience is configuring and integrating OFF solutions to
+            transform Federal Financial Management accounting, operations, reporting,
+            analytics, and internal controls — achieving operational improvement, regulatory
+            compliance, data integrity, and clean financial statements.
+          </p>
+          <p class="mb-4 text-ink-muted">
+            Our consultants combine deep OFF expertise with private-sector GAAP experience,
+            enabling us to configure core functionality in innovative ways that meet complex
+            requirements without costly customizations.
+          </p>
+          <p class="mb-4 text-ink-muted">
+            We also apply AI-assisted help desk and O&amp;M practices on long-lived Oracle
+            Federal Financials estates — improving responsiveness while keeping humans in
+            the loop for financial actions.
+          </p>
 
-        @if (item.highlights?.length) {
           <div class="my-8 grid gap-3.5">
-            @for (highlight of item.highlights; track highlight.title) {
-              <article class="rounded-xl border-l-[3px] border-brand-500 bg-surface px-5 py-4">
-                <h3 class="mb-1.5 text-[1.05rem]">{{ highlight.title }}</h3>
-                <p class="m-0 text-ink-muted">{{ highlight.description }}</p>
-              </article>
-            }
+            <article class="rounded-xl border-l-[3px] border-brand-500 bg-surface px-5 py-4">
+              <h3 class="mb-1.5 text-[1.05rem]">Oracle Federal Financials</h3>
+              <p class="m-0 text-ink-muted">
+                Expert-level OFF implementation, upgrade, and support.
+              </p>
+            </article>
+            <article class="rounded-xl border-l-[3px] border-brand-500 bg-surface px-5 py-4">
+              <h3 class="mb-1.5 text-[1.05rem]">Compliance &amp; Controls</h3>
+              <p class="m-0 text-ink-muted">
+                Aligned with Federal regulations, Treasury mandates, and clean audit
+                outcomes.
+              </p>
+            </article>
+            <article class="rounded-xl border-l-[3px] border-brand-500 bg-surface px-5 py-4">
+              <h3 class="mb-1.5 text-[1.05rem]">Process Modernization</h3>
+              <p class="m-0 text-ink-muted">
+                Business process improvement grounded in commercial best practices.
+              </p>
+            </article>
           </div>
-        }
 
-        @if (item.seeAlso) {
           <p class="mt-6 text-ink-muted">
             Learn more:
             <a
               class="font-semibold text-navy-700 no-underline hover:text-brand-600"
-              [routerLink]="item.seeAlso.path"
-              [fragment]="item.seeAlso.fragment"
+              routerLink="/capabilities"
+              fragment="ai"
             >
-              {{ item.seeAlso.label }}
+              AI &amp; intelligent automation on Capabilities
             </a>
           </p>
-        }
 
-        <a routerLink="/contact" class="btn btn-primary mt-6">Discuss this capability</a>
+          <a routerLink="/contact" class="btn btn-primary mt-6">Discuss this capability</a>
+        </div>
+
+        <aside class="sticky top-[calc(4.75rem+1.5rem)] rounded-xl border border-line bg-surface p-5 max-lg:static">
+          <h3 class="mb-3.5 text-[0.95rem]">Other services</h3>
+          <ul class="grid gap-2.5">
+            <li>
+              <a class="text-[0.95rem] text-ink-soft no-underline hover:text-brand-600" routerLink="/services/rpa">Robotic Process Automation (RPA)</a>
+            </li>
+            <li>
+              <a class="text-[0.95rem] text-ink-soft no-underline hover:text-brand-600" routerLink="/services/program-project-management">Program and Project Management</a>
+            </li>
+            <li>
+              <a class="text-[0.95rem] text-ink-soft no-underline hover:text-brand-600" routerLink="/services/acquisition-management">Acquisition Management Solutions</a>
+            </li>
+            <li>
+              <a class="text-[0.95rem] text-ink-soft no-underline hover:text-brand-600" routerLink="/services/business-intelligence">Business Intelligence and Analytics</a>
+            </li>
+            <li>
+              <a class="text-[0.95rem] text-ink-soft no-underline hover:text-brand-600" routerLink="/services/application-development">Application Development</a>
+            </li>
+            <li>
+              <a class="text-[0.95rem] text-ink-soft no-underline hover:text-brand-600" routerLink="/services/operations-maintenance">Operations and Maintenance</a>
+            </li>
+          </ul>
+        </aside>
       </div>
+    </section>
+  }
+  @case ('rpa') {
+    <section class="page-hero">
+      <div class="container-site relative z-[1]">
+        <p class="mb-4 text-[0.95rem] text-white/70">
+          <a class="text-brand-400 no-underline hover:text-brand-400" routerLink="/services">Services</a>
+          / Robotic Process Automation (RPA)
+        </p>
+        <h1>Robotic Process Automation (RPA)</h1>
+        <p>
+          End-to-end RPA programs that establish Centers of Excellence, scalable platforms,
+          and sustainable automation pipelines.
+        </p>
+      </div>
+    </section>
 
-      <aside class="sticky top-[calc(4.75rem+1.5rem)] rounded-xl border border-line bg-surface p-5 max-lg:static">
-        <h3 class="mb-3.5 text-[0.95rem]">Other services</h3>
-        <ul class="grid gap-2.5">
-          @for (other of related; track other.slug) {
-            @if (other.slug !== item.slug) {
-              <li>
-                <a class="text-[0.95rem] text-ink-soft no-underline hover:text-brand-600" [routerLink]="['/services', other.slug]">{{ other.title }}</a>
-              </li>
-            }
-          }
-        </ul>
-      </aside>
-    </div>
-  </section>
-} @else {
-  <section class="section-y">
-    <div class="container-site">
-      <h1 class="mb-3">Service not found</h1>
-      <p class="mb-6 text-ink-muted">The service you requested is unavailable.</p>
-      <a routerLink="/services" class="btn btn-dark">Back to services</a>
-    </div>
-  </section>
+    <section class="section-y">
+      <div class="container-site grid items-start gap-8 lg:grid-cols-[minmax(0,1fr)_16.5rem] lg:gap-12">
+        <div class="max-w-[46rem]">
+          <p class="mb-4 text-ink-muted">
+            Our RPA solutions help clients establish and manage thriving automation
+            programs. We set every client up for long-term success by building best
+            practices, procedures, and robust platform architecture.
+          </p>
+          <p class="mb-4 text-ink-muted">
+            Our methodology covers Center of Excellence creation, pipeline generation,
+            platform architecture, development standards, and support operations — helping
+            clients avoid common scalability and security pitfalls.
+          </p>
+          <p class="mb-4 text-ink-muted">
+            We deliver across industry-leading platforms including UiPath and Blue Prism.
+          </p>
+          <p class="mb-4 text-ink-muted">
+            Federal RPA programs are moving toward governed, agentic platforms. i360 extends
+            CoE work from production bots to exception-handling agents — reusing authorized
+            platforms, bot identities, and human-in-the-loop controls for finance
+            operations.
+          </p>
+
+          <div class="my-8 grid gap-3.5">
+            <article class="rounded-xl border-l-[3px] border-brand-500 bg-surface px-5 py-4">
+              <h3 class="mb-1.5 text-[1.05rem]">Vision</h3>
+              <p class="m-0 text-ink-muted">
+                RPA CoE guidelines, messaging, and automation pipeline strategy.
+              </p>
+            </article>
+            <article class="rounded-xl border-l-[3px] border-brand-500 bg-surface px-5 py-4">
+              <h3 class="mb-1.5 text-[1.05rem]">Platform</h3>
+              <p class="m-0 text-ink-muted">
+                Scalable architecture designed around security and privacy requirements.
+              </p>
+            </article>
+            <article class="rounded-xl border-l-[3px] border-brand-500 bg-surface px-5 py-4">
+              <h3 class="mb-1.5 text-[1.05rem]">Delivery &amp; Support</h3>
+              <p class="m-0 text-ink-muted">
+                Best-practice bots, training workshops, and helpdesk methodologies.
+              </p>
+            </article>
+          </div>
+
+          <p class="mt-6 text-ink-muted">
+            Learn more:
+            <a
+              class="font-semibold text-navy-700 no-underline hover:text-brand-600"
+              routerLink="/capabilities"
+              fragment="ai"
+            >
+              AI &amp; intelligent automation on Capabilities
+            </a>
+          </p>
+
+          <a routerLink="/contact" class="btn btn-primary mt-6">Discuss this capability</a>
+        </div>
+
+        <aside class="sticky top-[calc(4.75rem+1.5rem)] rounded-xl border border-line bg-surface p-5 max-lg:static">
+          <h3 class="mb-3.5 text-[0.95rem]">Other services</h3>
+          <ul class="grid gap-2.5">
+            <li>
+              <a class="text-[0.95rem] text-ink-soft no-underline hover:text-brand-600" routerLink="/services/financial-management">Financial Management Solutions</a>
+            </li>
+            <li>
+              <a class="text-[0.95rem] text-ink-soft no-underline hover:text-brand-600" routerLink="/services/program-project-management">Program and Project Management</a>
+            </li>
+            <li>
+              <a class="text-[0.95rem] text-ink-soft no-underline hover:text-brand-600" routerLink="/services/acquisition-management">Acquisition Management Solutions</a>
+            </li>
+            <li>
+              <a class="text-[0.95rem] text-ink-soft no-underline hover:text-brand-600" routerLink="/services/business-intelligence">Business Intelligence and Analytics</a>
+            </li>
+            <li>
+              <a class="text-[0.95rem] text-ink-soft no-underline hover:text-brand-600" routerLink="/services/application-development">Application Development</a>
+            </li>
+            <li>
+              <a class="text-[0.95rem] text-ink-soft no-underline hover:text-brand-600" routerLink="/services/operations-maintenance">Operations and Maintenance</a>
+            </li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+  }
+  @case ('program-project-management') {
+    <section class="page-hero">
+      <div class="container-site relative z-[1]">
+        <p class="mb-4 text-[0.95rem] text-white/70">
+          <a class="text-brand-400 no-underline hover:text-brand-400" routerLink="/services">Services</a>
+          / Program and Project Management
+        </p>
+        <h1>Program and Project Management</h1>
+        <p>
+          Disciplined program and project leadership that keeps complex federal initiatives
+          on schedule, on budget, and aligned to mission outcomes.
+        </p>
+      </div>
+    </section>
+
+    <section class="section-y">
+      <div class="container-site grid items-start gap-8 lg:grid-cols-[minmax(0,1fr)_16.5rem] lg:gap-12">
+        <div class="max-w-[46rem]">
+          <p class="mb-4 text-ink-muted">
+            i360 provides seasoned program and project managers who bring structure,
+            transparency, and accountability to multi-workstream federal initiatives.
+          </p>
+          <p class="mb-4 text-ink-muted">
+            We tailor management approaches to each engagement — applying Agile, hybrid, and
+            traditional methods as appropriate — while maintaining clear governance, risk
+            management, and stakeholder communication.
+          </p>
+
+          <div class="my-8 grid gap-3.5">
+            <article class="rounded-xl border-l-[3px] border-brand-500 bg-surface px-5 py-4">
+              <h3 class="mb-1.5 text-[1.05rem]">Delivery Discipline</h3>
+              <p class="m-0 text-ink-muted">
+                Cost, schedule, and scope control with actionable reporting.
+              </p>
+            </article>
+            <article class="rounded-xl border-l-[3px] border-brand-500 bg-surface px-5 py-4">
+              <h3 class="mb-1.5 text-[1.05rem]">Adaptive Methods</h3>
+              <p class="m-0 text-ink-muted">
+                Agile, hybrid, and waterfall approaches matched to program needs.
+              </p>
+            </article>
+          </div>
+
+          <a routerLink="/contact" class="btn btn-primary mt-6">Discuss this capability</a>
+        </div>
+
+        <aside class="sticky top-[calc(4.75rem+1.5rem)] rounded-xl border border-line bg-surface p-5 max-lg:static">
+          <h3 class="mb-3.5 text-[0.95rem]">Other services</h3>
+          <ul class="grid gap-2.5">
+            <li>
+              <a class="text-[0.95rem] text-ink-soft no-underline hover:text-brand-600" routerLink="/services/financial-management">Financial Management Solutions</a>
+            </li>
+            <li>
+              <a class="text-[0.95rem] text-ink-soft no-underline hover:text-brand-600" routerLink="/services/rpa">Robotic Process Automation (RPA)</a>
+            </li>
+            <li>
+              <a class="text-[0.95rem] text-ink-soft no-underline hover:text-brand-600" routerLink="/services/acquisition-management">Acquisition Management Solutions</a>
+            </li>
+            <li>
+              <a class="text-[0.95rem] text-ink-soft no-underline hover:text-brand-600" routerLink="/services/business-intelligence">Business Intelligence and Analytics</a>
+            </li>
+            <li>
+              <a class="text-[0.95rem] text-ink-soft no-underline hover:text-brand-600" routerLink="/services/application-development">Application Development</a>
+            </li>
+            <li>
+              <a class="text-[0.95rem] text-ink-soft no-underline hover:text-brand-600" routerLink="/services/operations-maintenance">Operations and Maintenance</a>
+            </li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+  }
+  @case ('acquisition-management') {
+    <section class="page-hero">
+      <div class="container-site relative z-[1]">
+        <p class="mb-4 text-[0.95rem] text-white/70">
+          <a class="text-brand-400 no-underline hover:text-brand-400" routerLink="/services">Services</a>
+          / Acquisition Management Solutions
+        </p>
+        <h1>Acquisition Management Solutions</h1>
+        <p>
+          Acquisition support spanning planning, solicitation, award, and contract
+          administration for federal programs.
+        </p>
+      </div>
+    </section>
+
+    <section class="section-y">
+      <div class="container-site grid items-start gap-8 lg:grid-cols-[minmax(0,1fr)_16.5rem] lg:gap-12">
+        <div class="max-w-[46rem]">
+          <p class="mb-4 text-ink-muted">
+            i360 brings deep contract lifecycle management expertise to public-sector
+            clients, helping agencies navigate complex procurement requirements with
+            confidence.
+          </p>
+          <p class="mb-4 text-ink-muted">
+            Our teams support acquisition planning, solicitation development, evaluation
+            support, and post-award administration so programs stay compliant and
+            mission-ready.
+          </p>
+
+          <a routerLink="/contact" class="btn btn-primary mt-6">Discuss this capability</a>
+        </div>
+
+        <aside class="sticky top-[calc(4.75rem+1.5rem)] rounded-xl border border-line bg-surface p-5 max-lg:static">
+          <h3 class="mb-3.5 text-[0.95rem]">Other services</h3>
+          <ul class="grid gap-2.5">
+            <li>
+              <a class="text-[0.95rem] text-ink-soft no-underline hover:text-brand-600" routerLink="/services/financial-management">Financial Management Solutions</a>
+            </li>
+            <li>
+              <a class="text-[0.95rem] text-ink-soft no-underline hover:text-brand-600" routerLink="/services/rpa">Robotic Process Automation (RPA)</a>
+            </li>
+            <li>
+              <a class="text-[0.95rem] text-ink-soft no-underline hover:text-brand-600" routerLink="/services/program-project-management">Program and Project Management</a>
+            </li>
+            <li>
+              <a class="text-[0.95rem] text-ink-soft no-underline hover:text-brand-600" routerLink="/services/business-intelligence">Business Intelligence and Analytics</a>
+            </li>
+            <li>
+              <a class="text-[0.95rem] text-ink-soft no-underline hover:text-brand-600" routerLink="/services/application-development">Application Development</a>
+            </li>
+            <li>
+              <a class="text-[0.95rem] text-ink-soft no-underline hover:text-brand-600" routerLink="/services/operations-maintenance">Operations and Maintenance</a>
+            </li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+  }
+  @case ('business-intelligence') {
+    <section class="page-hero">
+      <div class="container-site relative z-[1]">
+        <p class="mb-4 text-[0.95rem] text-white/70">
+          <a class="text-brand-400 no-underline hover:text-brand-400" routerLink="/services">Services</a>
+          / Business Intelligence and Analytics
+        </p>
+        <h1>Business Intelligence and Analytics</h1>
+        <p>
+          Analytics and reporting solutions that turn financial and operational data into
+          decisions leaders can trust.
+        </p>
+      </div>
+    </section>
+
+    <section class="section-y">
+      <div class="container-site grid items-start gap-8 lg:grid-cols-[minmax(0,1fr)_16.5rem] lg:gap-12">
+        <div class="max-w-[46rem]">
+          <p class="mb-4 text-ink-muted">
+            We help agencies modernize reporting and analytics environments so leaders can
+            move from static reports to actionable insight.
+          </p>
+          <p class="mb-4 text-ink-muted">
+            Our teams design dashboards, data models, and reporting frameworks that improve
+            transparency, integrity, and decision speed across financial and operational
+            domains.
+          </p>
+
+          <a routerLink="/contact" class="btn btn-primary mt-6">Discuss this capability</a>
+        </div>
+
+        <aside class="sticky top-[calc(4.75rem+1.5rem)] rounded-xl border border-line bg-surface p-5 max-lg:static">
+          <h3 class="mb-3.5 text-[0.95rem]">Other services</h3>
+          <ul class="grid gap-2.5">
+            <li>
+              <a class="text-[0.95rem] text-ink-soft no-underline hover:text-brand-600" routerLink="/services/financial-management">Financial Management Solutions</a>
+            </li>
+            <li>
+              <a class="text-[0.95rem] text-ink-soft no-underline hover:text-brand-600" routerLink="/services/rpa">Robotic Process Automation (RPA)</a>
+            </li>
+            <li>
+              <a class="text-[0.95rem] text-ink-soft no-underline hover:text-brand-600" routerLink="/services/program-project-management">Program and Project Management</a>
+            </li>
+            <li>
+              <a class="text-[0.95rem] text-ink-soft no-underline hover:text-brand-600" routerLink="/services/acquisition-management">Acquisition Management Solutions</a>
+            </li>
+            <li>
+              <a class="text-[0.95rem] text-ink-soft no-underline hover:text-brand-600" routerLink="/services/application-development">Application Development</a>
+            </li>
+            <li>
+              <a class="text-[0.95rem] text-ink-soft no-underline hover:text-brand-600" routerLink="/services/operations-maintenance">Operations and Maintenance</a>
+            </li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+  }
+  @case ('application-development') {
+    <section class="page-hero">
+      <div class="container-site relative z-[1]">
+        <p class="mb-4 text-[0.95rem] text-white/70">
+          <a class="text-brand-400 no-underline hover:text-brand-400" routerLink="/services">Services</a>
+          / Application Development
+        </p>
+        <h1>Application Development</h1>
+        <p>
+          Custom application design and development focused on usability, security, and
+          long-term maintainability.
+        </p>
+      </div>
+    </section>
+
+    <section class="section-y">
+      <div class="container-site grid items-start gap-8 lg:grid-cols-[minmax(0,1fr)_16.5rem] lg:gap-12">
+        <div class="max-w-[46rem]">
+          <p class="mb-4 text-ink-muted">
+            i360 develops end-to-end custom web applications that solve specific mission and
+            business needs for federal clients.
+          </p>
+          <p class="mb-4 text-ink-muted">
+            We emphasize clean architecture, secure coding practices, and scalable designs
+            that integrate with enterprise platforms and existing workflows.
+          </p>
+
+          <a routerLink="/contact" class="btn btn-primary mt-6">Discuss this capability</a>
+        </div>
+
+        <aside class="sticky top-[calc(4.75rem+1.5rem)] rounded-xl border border-line bg-surface p-5 max-lg:static">
+          <h3 class="mb-3.5 text-[0.95rem]">Other services</h3>
+          <ul class="grid gap-2.5">
+            <li>
+              <a class="text-[0.95rem] text-ink-soft no-underline hover:text-brand-600" routerLink="/services/financial-management">Financial Management Solutions</a>
+            </li>
+            <li>
+              <a class="text-[0.95rem] text-ink-soft no-underline hover:text-brand-600" routerLink="/services/rpa">Robotic Process Automation (RPA)</a>
+            </li>
+            <li>
+              <a class="text-[0.95rem] text-ink-soft no-underline hover:text-brand-600" routerLink="/services/program-project-management">Program and Project Management</a>
+            </li>
+            <li>
+              <a class="text-[0.95rem] text-ink-soft no-underline hover:text-brand-600" routerLink="/services/acquisition-management">Acquisition Management Solutions</a>
+            </li>
+            <li>
+              <a class="text-[0.95rem] text-ink-soft no-underline hover:text-brand-600" routerLink="/services/business-intelligence">Business Intelligence and Analytics</a>
+            </li>
+            <li>
+              <a class="text-[0.95rem] text-ink-soft no-underline hover:text-brand-600" routerLink="/services/operations-maintenance">Operations and Maintenance</a>
+            </li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+  }
+  @case ('operations-maintenance') {
+    <section class="page-hero">
+      <div class="container-site relative z-[1]">
+        <p class="mb-4 text-[0.95rem] text-white/70">
+          <a class="text-brand-400 no-underline hover:text-brand-400" routerLink="/services">Services</a>
+          / Operations and Maintenance
+        </p>
+        <h1>Operations and Maintenance</h1>
+        <p>
+          Steady-state operations support that keeps critical systems reliable, optimized,
+          and ready for change.
+        </p>
+      </div>
+    </section>
+
+    <section class="section-y">
+      <div class="container-site grid items-start gap-8 lg:grid-cols-[minmax(0,1fr)_16.5rem] lg:gap-12">
+        <div class="max-w-[46rem]">
+          <p class="mb-4 text-ink-muted">
+            Our operations and maintenance teams keep enterprise systems healthy day to day
+            while identifying opportunities for performance and process improvement.
+          </p>
+          <p class="mb-4 text-ink-muted">
+            We provide responsive support, proactive monitoring practices, and continuous
+            enhancement so agencies can focus on mission outcomes.
+          </p>
+          <p class="mb-4 text-ink-muted">
+            On Oracle EBS / Federal Financials managed services, we use AI-assisted triage
+            and knowledge support to strengthen help desk and O&amp;M performance — without
+            removing human approval from financial postings.
+          </p>
+
+          <p class="mt-6 text-ink-muted">
+            Learn more:
+            <a
+              class="font-semibold text-navy-700 no-underline hover:text-brand-600"
+              routerLink="/capabilities"
+              fragment="ai"
+            >
+              AI &amp; intelligent automation on Capabilities
+            </a>
+          </p>
+
+          <a routerLink="/contact" class="btn btn-primary mt-6">Discuss this capability</a>
+        </div>
+
+        <aside class="sticky top-[calc(4.75rem+1.5rem)] rounded-xl border border-line bg-surface p-5 max-lg:static">
+          <h3 class="mb-3.5 text-[0.95rem]">Other services</h3>
+          <ul class="grid gap-2.5">
+            <li>
+              <a class="text-[0.95rem] text-ink-soft no-underline hover:text-brand-600" routerLink="/services/financial-management">Financial Management Solutions</a>
+            </li>
+            <li>
+              <a class="text-[0.95rem] text-ink-soft no-underline hover:text-brand-600" routerLink="/services/rpa">Robotic Process Automation (RPA)</a>
+            </li>
+            <li>
+              <a class="text-[0.95rem] text-ink-soft no-underline hover:text-brand-600" routerLink="/services/program-project-management">Program and Project Management</a>
+            </li>
+            <li>
+              <a class="text-[0.95rem] text-ink-soft no-underline hover:text-brand-600" routerLink="/services/acquisition-management">Acquisition Management Solutions</a>
+            </li>
+            <li>
+              <a class="text-[0.95rem] text-ink-soft no-underline hover:text-brand-600" routerLink="/services/business-intelligence">Business Intelligence and Analytics</a>
+            </li>
+            <li>
+              <a class="text-[0.95rem] text-ink-soft no-underline hover:text-brand-600" routerLink="/services/application-development">Application Development</a>
+            </li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+  }
+  @default {
+    <section class="section-y">
+      <div class="container-site">
+        <h1 class="mb-3">Service not found</h1>
+        <p class="mb-6 text-ink-muted">The service you requested is unavailable.</p>
+        <a routerLink="/services" class="btn btn-dark">Back to services</a>
+      </div>
+    </section>
+  }
 }

@@ -10,15 +10,82 @@
 
 <section class="section-y">
   <div class="container-site grid gap-4">
-    @for (service of services; track service.slug; let i = $index) {
-      <article class="flex flex-col items-start justify-between gap-6 rounded-[20px] border border-transparent bg-surface px-5 py-6 transition hover:border-brand-100 hover:bg-white hover:shadow-sm sm:flex-row sm:items-center">
-        <div>
-          <span class="mb-1.5 inline-block font-display text-sm font-semibold text-brand-600">{{ i + 1 | number: '2.0-0' }}</span>
-          <h2 class="mb-2 text-[clamp(1.25rem,2.4vw,1.6rem)]">{{ service.title }}</h2>
-          <p class="max-w-3xl text-ink-muted">{{ service.summary }}</p>
-        </div>
-        <a class="btn btn-outline shrink-0" [routerLink]="['/services', service.slug]">View details</a>
-      </article>
-    }
+    <article class="flex flex-col items-start justify-between gap-6 rounded-[20px] border border-transparent bg-surface px-5 py-6 transition hover:border-brand-100 hover:bg-white hover:shadow-sm sm:flex-row sm:items-center">
+      <div>
+        <span class="mb-1.5 inline-block font-display text-sm font-semibold text-brand-600">01</span>
+        <h2 class="mb-2 text-[clamp(1.25rem,2.4vw,1.6rem)]">Financial Management Solutions</h2>
+        <p class="max-w-3xl text-ink-muted">
+          Innovative enterprise solutions that modernize accounting, reporting, analytics,
+          and internal controls for Federal agencies.
+        </p>
+      </div>
+      <a class="btn btn-outline shrink-0" routerLink="/services/financial-management">View details</a>
+    </article>
+    <article class="flex flex-col items-start justify-between gap-6 rounded-[20px] border border-transparent bg-surface px-5 py-6 transition hover:border-brand-100 hover:bg-white hover:shadow-sm sm:flex-row sm:items-center">
+      <div>
+        <span class="mb-1.5 inline-block font-display text-sm font-semibold text-brand-600">02</span>
+        <h2 class="mb-2 text-[clamp(1.25rem,2.4vw,1.6rem)]">Robotic Process Automation (RPA)</h2>
+        <p class="max-w-3xl text-ink-muted">
+          End-to-end RPA programs that establish Centers of Excellence, scalable platforms,
+          and sustainable automation pipelines.
+        </p>
+      </div>
+      <a class="btn btn-outline shrink-0" routerLink="/services/rpa">View details</a>
+    </article>
+    <article class="flex flex-col items-start justify-between gap-6 rounded-[20px] border border-transparent bg-surface px-5 py-6 transition hover:border-brand-100 hover:bg-white hover:shadow-sm sm:flex-row sm:items-center">
+      <div>
+        <span class="mb-1.5 inline-block font-display text-sm font-semibold text-brand-600">03</span>
+        <h2 class="mb-2 text-[clamp(1.25rem,2.4vw,1.6rem)]">Program and Project Management</h2>
+        <p class="max-w-3xl text-ink-muted">
+          Disciplined program and project leadership that keeps complex federal initiatives
+          on schedule, on budget, and aligned to mission outcomes.
+        </p>
+      </div>
+      <a class="btn btn-outline shrink-0" routerLink="/services/program-project-management">View details</a>
+    </article>
+    <article class="flex flex-col items-start justify-between gap-6 rounded-[20px] border border-transparent bg-surface px-5 py-6 transition hover:border-brand-100 hover:bg-white hover:shadow-sm sm:flex-row sm:items-center">
+      <div>
+        <span class="mb-1.5 inline-block font-display text-sm font-semibold text-brand-600">04</span>
+        <h2 class="mb-2 text-[clamp(1.25rem,2.4vw,1.6rem)]">Acquisition Management Solutions</h2>
+        <p class="max-w-3xl text-ink-muted">
+          Acquisition support spanning planning, solicitation, award, and contract
+          administration for federal programs.
+        </p>
+      </div>
+      <a class="btn btn-outline shrink-0" routerLink="/services/acquisition-management">View details</a>
+    </article>
+    <article class="flex flex-col items-start justify-between gap-6 rounded-[20px] border border-transparent bg-surface px-5 py-6 transition hover:border-brand-100 hover:bg-white hover:shadow-sm sm:flex-row sm:items-center">
+      <div>
+        <span class="mb-1.5 inline-block font-display text-sm font-semibold text-brand-600">05</span>
+        <h2 class="mb-2 text-[clamp(1.25rem,2.4vw,1.6rem)]">Business Intelligence and Analytics</h2>
+        <p class="max-w-3xl text-ink-muted">
+          Analytics and reporting solutions that turn financial and operational data into
+          decisions leaders can trust.
+        </p>
+      </div>
+      <a class="btn btn-outline shrink-0" routerLink="/services/business-intelligence">View details</a>
+    </article>
+    <article class="flex flex-col items-start justify-between gap-6 rounded-[20px] border border-transparent bg-surface px-5 py-6 transition hover:border-brand-100 hover:bg-white hover:shadow-sm sm:flex-row sm:items-center">
+      <div>
+        <span class="mb-1.5 inline-block font-display text-sm font-semibold text-brand-600">06</span>
+        <h2 class="mb-2 text-[clamp(1.25rem,2.4vw,1.6rem)]">Application Development</h2>
+        <p class="max-w-3xl text-ink-muted">
+          Custom application design and development focused on usability, security, and
+          long-term maintainability.
+        </p>
+      </div>
+      <a class="btn btn-outline shrink-0" routerLink="/services/application-development">View details</a>
+    </article>
+    <article class="flex flex-col items-start justify-between gap-6 rounded-[20px] border border-transparent bg-surface px-5 py-6 transition hover:border-brand-100 hover:bg-white hover:shadow-sm sm:flex-row sm:items-center">
+      <div>
+        <span class="mb-1.5 inline-block font-display text-sm font-semibold text-brand-600">07</span>
+        <h2 class="mb-2 text-[clamp(1.25rem,2.4vw,1.6rem)]">Operations and Maintenance</h2>
+        <p class="max-w-3xl text-ink-muted">
+          Steady-state operations support that keeps critical systems reliable, optimized,
+          and ready for change.
+        </p>
+      </div>
+      <a class="btn btn-outline shrink-0" routerLink="/services/operations-maintenance">View details</a>
+    </article>
   </div>
 </section>

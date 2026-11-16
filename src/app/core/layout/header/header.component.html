@@ -66,6 +66,7 @@
                           class="block rounded-md px-3 py-2.5 text-[0.9375rem] text-ink-soft no-underline hover:bg-brand-50 hover:text-brand-700"
                           [routerLink]="child.path"
                           routerLinkActive="bg-brand-50 text-brand-700"
+                          [routerLinkActiveOptions]="{ exact: true }"
                           (click)="closeMenu()"
                         >
                           {{ child.label }}

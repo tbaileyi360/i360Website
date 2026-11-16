@@ -11,21 +11,19 @@
       <article class="rounded-xl border border-line bg-surface p-5">
         <h2 class="mb-2.5 text-[1.05rem]">Mailing address</h2>
         <p class="text-ink-muted">i360technologies, Inc.</p>
-        @for (line of company.hq.lines; track line) {
-          <p class="text-ink-muted">{{ line }}</p>
-        }
+        <p class="text-ink-muted">2300 Wilson Blvd, Ste 700 #1116</p>
+        <p class="text-ink-muted">Arlington, VA 22201</p>
       </article>
       <article class="rounded-xl border border-line bg-surface p-5">
         <h2 class="mb-2.5 text-[1.05rem]">Phone & email</h2>
-        <p><a class="font-semibold text-navy-700 no-underline" [href]="'tel:' + company.phone">{{ company.phone }}</a></p>
-        <p class="text-ink-muted">Fax: {{ company.fax }}</p>
-        <p><a class="font-semibold text-navy-700 no-underline" [href]="mailToHref">{{ company.email }}</a></p>
+        <p><a class="font-semibold text-navy-700 no-underline" href="tel:703-476-4100">703-476-4100</a></p>
+        <p class="text-ink-muted">Fax: 703-342-4343</p>
+        <p><a class="font-semibold text-navy-700 no-underline" href="mailto:info@i360technologies.com?subject=Website%20inquiry&amp;body=Name%3A%20%0AEmail%3A%20%0AOrganization%3A%20%0A%0AMessage%3A%0A">info&#64;i360technologies.com</a></p>
       </article>
       <article class="rounded-xl border border-line bg-surface p-5">
         <h2 class="mb-2.5 text-[1.05rem]">Branch office</h2>
-        @for (line of company.branch.lines; track line) {
-          <p class="text-ink-muted">{{ line }}</p>
-        }
+        <p class="text-ink-muted">3 Armory Road, Suite 100</p>
+        <p class="text-ink-muted">Prince Frederick, MD 20678</p>
       </article>
     </div>
 
@@ -34,14 +32,14 @@
         <h2 class="text-[1.45rem]">Send a message</h2>
         <p class="mt-2 text-ink-muted">
           Opens your email app to
-          <a class="font-semibold text-navy-700" [href]="mailToHref">{{ company.email }}</a>
+          <a class="font-semibold text-navy-700" href="mailto:info@i360technologies.com?subject=Website%20inquiry&amp;body=Name%3A%20%0AEmail%3A%20%0AOrganization%3A%20%0A%0AMessage%3A%0A">info&#64;i360technologies.com</a>
           with a ready-to-fill template.
         </p>
       </div>
 
       <div class="rounded-xl border border-line bg-surface p-5 font-mono text-sm leading-relaxed text-ink-soft">
         <p class="mb-3 font-display text-xs font-semibold uppercase tracking-wide text-ink-muted">Email preview</p>
-        <p><span class="text-ink-muted">To:</span> {{ company.email }}</p>
+        <p><span class="text-ink-muted">To:</span> info&#64;i360technologies.com</p>
         <p><span class="text-ink-muted">Subject:</span> Website inquiry</p>
         <hr class="my-4 border-line" />
         <p>Name:</p>
@@ -50,7 +48,7 @@
         <p class="mt-3">Message:</p>
       </div>
 
-      <a class="btn btn-primary w-fit no-underline hover:text-white" [href]="mailToHref">
+      <a class="btn btn-primary w-fit no-underline hover:text-white" href="mailto:info@i360technologies.com?subject=Website%20inquiry&amp;body=Name%3A%20%0AEmail%3A%20%0AOrganization%3A%20%0A%0AMessage%3A%0A">
         Open email draft
       </a>
     </div>
