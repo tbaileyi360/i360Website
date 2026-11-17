@@ -3,7 +3,7 @@
   [class.is-scrolled]="scrolled"
   [class.is-open]="menuOpen"
 >
-  <div class="container-site flex h-full items-center justify-between gap-6">
+  <div class="container-site header-inner flex h-full items-center justify-between gap-6">
     <a routerLink="/" class="inline-flex shrink-0 items-center gap-2.5 no-underline" (click)="closeMenu()" aria-label="i360technologies home">
       <span class="brand-badge max-[420px]:h-11 max-[420px]:w-11" aria-hidden="true">
         <span class="brand-badge-text max-[420px]:text-sm">i360</span>
@@ -92,6 +92,16 @@
 
       <a routerLink="/contact" class="btn btn-primary header-cta shrink-0" (click)="closeMenu()">
         Talk with us
+      </a>
+
+      <a
+        class="nav-link employee-link inline-flex shrink-0 items-center gap-1.5 rounded-full px-3.5 py-2 font-display text-[0.9375rem] font-medium text-ink-soft no-underline transition hover:bg-brand-50 hover:text-ink"
+        href="https://exg-ep.prismhr.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+        (click)="closeMenu()"
+      >
+        Employees
       </a>
     </nav>
   </div>
